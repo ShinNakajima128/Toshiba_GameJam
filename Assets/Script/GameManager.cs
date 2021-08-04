@@ -15,7 +15,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [SerializeField] bool InGame = false;
     [Header("スコアを表示するテキスト")]
     [SerializeField] Text m_scoreText = default;
-    float stmachGauge = default;
+    float stomachGauge = default;
     int m_score = default;
     
 
@@ -34,7 +34,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     private void Start()
     {
-        stmachGauge = m_stomachGauge;
+        stomachGauge = m_stomachGauge;
         InGame = true;
     }
 
@@ -42,12 +42,12 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
        if (InGame)
         {
-            stmachGauge -= Time.deltaTime * m_decreaseSpeed;
+            stomachGauge -= Time.deltaTime * m_decreaseSpeed;
             m_scoreText.text = "スコア : " + m_score.ToString();
 
-            if (m_stomachSlider) m_stomachSlider.value = stmachGauge;
+            if (m_stomachSlider) m_stomachSlider.value = stomachGauge;
             
-            if (stmachGauge <= 0) { 
+            if (stomachGauge <= 0) { 
                 InGame = false;
                 EventManager.GameEnd();
                 Debug.Log("ゲーム終了"); 
@@ -70,11 +70,11 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     /// <param name="value"> 回復量 </param>
     public void Recovery(int value)
     {
-        m_stomachGauge += value;
+        stomachGauge += value;
 
-        if (stmachGauge >= 100)
+        if (stomachGauge >= 100)
         {
-            stmachGauge = 100;
+            stomachGauge = 100;
         }
     }
 
@@ -84,6 +84,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     /// <param name="value"> ダメージ量 </param>
     public void Damage(int value)
     {
-        stmachGauge -= value;
+        stomachGauge -= value;
     }
 }
