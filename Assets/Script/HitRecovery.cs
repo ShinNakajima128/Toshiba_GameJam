@@ -8,7 +8,7 @@ public class HitRecovery : MonoBehaviour
 {
     [Header("空腹回復量")]
     [SerializeField] int m_value = 20;
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {

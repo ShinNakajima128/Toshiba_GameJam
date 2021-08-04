@@ -7,7 +7,7 @@ using UnityEngine;
 public class HitDamage : MonoBehaviour
 {
     [SerializeField] int m_damage = 100;
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
