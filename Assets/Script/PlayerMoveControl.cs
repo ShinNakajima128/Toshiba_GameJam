@@ -15,7 +15,11 @@ public class PlayerMoveControl : MoveControl
 
     void Update()
     {
-        if (!m_moveF) return;
+        if (!m_moveF) 
+        {
+            m_rB.velocity = Vector3.zero;
+            return;
+        }
         float x = Input.GetAxisRaw("Horizontal");
         //float y = Input.GetAxisRaw("Vertical");
         m_rB.velocity = new Vector3(x * m_moveSpeed, 0, 0);
@@ -23,6 +27,5 @@ public class PlayerMoveControl : MoveControl
     public override void GameEnd()
     {
         m_moveF = false;
-        m_rB.velocity = Vector3.zero;
     }
 }
