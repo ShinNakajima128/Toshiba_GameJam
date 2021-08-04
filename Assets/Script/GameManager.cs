@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
-    [SerializeField] int m_stomachGauge = 100;
+    [SerializeField] float m_stomachGauge = 100;
+    [SerializeField] bool InGame = false;
+    [SerializeField] Slider m_stomachSlider = default;
     int m_score = default;
-    bool InGame = false;
+    
 
     public int GetScore { get => m_score; }
 
@@ -25,7 +28,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
        if (InGame)
         {
-            if (m_stomachGauge <= 0) InGame = false;
+            m_stomachGauge -= Time.deltaTime;
+            if (m_stomachSlider) m_stomachSlider.value = m_stomachGauge;
+            if (m_stomachGauge <= 0) { InGame = false; Debug.Log("ゲーム終了"); }
         }
     }
 
