@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
@@ -19,6 +20,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     float m_gameSpeed = 1.0f;
     [Header("ダッシュ時のスピード")]
     [SerializeField] float m_dashSpeed = 1.0f;
+    [Header("デバッグ用のリスタートボタン")]
+    [SerializeField] GameObject m_restartButton = default;
     float stomachGauge = default;
     int m_score = default;
     
@@ -42,10 +45,39 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     private void Start()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        m_restartButton.SetActive(false);
         stomachGauge = m_stomachGauge;
         InGame = true;
+
+        if (SceneManager.GetActiveScene().name == "Title")
+        {
+
+        }
+        else if (SceneManager.GetActiveScene().name == "GameSCene")
+        {
+
+        }
+        else if (SceneManager.GetActiveScene().name == "Result")
+        {
+
+        }
     }
 
+    /// <summary>
+    /// 各Sceneへ遷移した時に処理を実行する
+    /// </summary>
+    /// <param name="nextScene"> 遷移後のScene </param>
+    /// <param name="mode"></param>
+    void OnSceneLoaded(Scene nextScene, LoadSceneMode mode)
+    {
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "GameScene":
+                m_score = 0;
+                break;
+        }
+    }
     private void Update()
     {
        if (InGame)
@@ -57,10 +89,22 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             
             if (stomachGauge <= 0) { 
                 InGame = false;
+                m_restartButton.SetActive(true);
                 EventManager.GameEnd();
                 Debug.Log("ゲーム終了"); 
             }
         }
+    }
+
+    /// <summary>
+    /// ゲームをリスタートする。デバッグボタン用
+    /// </summary>
+    public void Restart()
+    {
+        InGame = true;
+        stomachGauge = m_stomachGauge;
+        EventManager.GameStart();
+        m_restartButton.SetActive(false);
     }
 
     /// <summary>
