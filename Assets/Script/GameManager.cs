@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     [Header("空腹ゲージの最大値")]
-    [SerializeField] float m_stomachGauge = 100;
+    [SerializeField] int m_stomachGauge = 100;
     [Header("空腹ゲージのスライダー")]
     [SerializeField] Slider m_stomachSlider = default;
     [Header("空腹ゲージの減少速度")]
@@ -15,6 +15,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [SerializeField] bool InGame = false;
     [Header("スコアを表示するテキスト")]
     [SerializeField] Text m_scoreText = default;
+    float stmachGauge = default;
     int m_score = default;
     
 
@@ -31,17 +32,22 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Start()
+    {
+        stmachGauge = m_stomachGauge;
+        InGame = true;
+    }
+
     private void Update()
     {
        if (InGame)
         {
-            m_stomachGauge -=m_decreaseSpeed;
+            stmachGauge -= Time.deltaTime * m_decreaseSpeed;
             m_scoreText.text = "スコア : " + m_score.ToString();
-            m_score++;
 
-            if (m_stomachSlider) m_stomachSlider.value = m_stomachGauge;
+            if (m_stomachSlider) m_stomachSlider.value = stmachGauge;
             
-            if (m_stomachGauge <= 0) { 
+            if (stmachGauge <= 0) { 
                 InGame = false;
                 EventManager.GameEnd();
                 Debug.Log("ゲーム終了"); 
@@ -78,6 +84,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     /// <param name="value"> ダメージ量 </param>
     public void Damage(int value)
     {
-        m_stomachGauge -= value;
+        stmachGauge -= value;
     }
 }
