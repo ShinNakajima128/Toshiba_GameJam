@@ -325,6 +325,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &988895220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 988895222}
+  - component: {fileID: 988895221}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &988895221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988895220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c2a481c28ae027448fa1c18a0e7ea22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &988895222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988895220}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1058027090
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,6 +1011,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
         type: 3}
+      propertyPath: m_ses.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
       propertyPath: m_bgmAudioSource
       value: 
       objectReference: {fileID: 6387177294527422835}
@@ -976,6 +1024,86 @@ PrefabInstance:
       propertyPath: m_seAudioSource
       value: 
       objectReference: {fileID: 6387177294527422834}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 31ae7dbe981f91e469387aa31597b40f, type: 3}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3a9a34e158830c645b95fd56a0657ab8, type: 3}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 933a6d6414d8d4f49a90a6163e9fa7a0, type: 3}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4ee37552c47a8ac4ba4e4c8e22d3a8e6, type: 3}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 808df5b2a58005d469200b7c3c11a61e, type: 3}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e7bb99698bf8d54bbe35e315ac0e11f, type: 3}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 407effeda3d16c745ab0fb5435a132e6, type: 3}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9bf8f03156cf5714bb7ff0b37f8a3e22, type: 3}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: de50423a760bf0442a2bb4e38cf9b4d0, type: 3}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0be1b0d3821d8e74bb59a157a9fd040e, type: 3}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[10]
+      value: 
+      objectReference: {fileID: 8300000, guid: d039cae23acea62488abab24155b2a90, type: 3}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[11]
+      value: 
+      objectReference: {fileID: 8300000, guid: 84f7fb24643588b44851ab23626b55bb, type: 3}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[12]
+      value: 
+      objectReference: {fileID: 8300000, guid: caaf78f5b4950b0478ed2b9996bc507c, type: 3}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[13]
+      value: 
+      objectReference: {fileID: 8300000, guid: 498438fadc8e94742bddb44447d3b328, type: 3}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[14]
+      value: 
+      objectReference: {fileID: 8300000, guid: 356b7e1fbd272ed40a341acd7997cb45, type: 3}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[15]
+      value: 
+      objectReference: {fileID: 8300000, guid: bebe0757fff7d634493bccc39e3c0c83, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 995a90ab8ffae134aa9fd51a12c0fbbc, type: 3}
 --- !u!82 &6387177294527422834 stripped
