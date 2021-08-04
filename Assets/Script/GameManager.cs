@@ -17,7 +17,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [Header("スコアを表示するテキスト")]
     [SerializeField] Text m_scoreText = default;
     [Header("ゲームスピード")]
-    float m_gameSpeed = 1.0f;
+    [SerializeField] float m_gameSpeed = 1.0f;
     [Header("ダッシュ時のスピード")]
     [SerializeField] float m_dashSpeed = 1.0f;
     [Header("デバッグ用のリスタートボタン")]
@@ -31,6 +31,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public float GetGameSpeed { get => m_gameSpeed; }
 
     public float GetDashSpeed { get => m_dashSpeed; }
+
+    public bool GetInGame { get => InGame; }
 
     private void Awake()
     {
