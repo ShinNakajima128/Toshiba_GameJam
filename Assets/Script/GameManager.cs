@@ -72,9 +72,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         m_stomachGauge += value;
 
-        if (m_stomachGauge >= 100)
+        if (stmachGauge >= 100)
         {
-            m_stomachGauge = 100;
+            stmachGauge = 100;
         }
     }
 
