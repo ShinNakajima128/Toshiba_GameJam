@@ -5,9 +5,16 @@ using UnityEngine.UI;
 
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
+    [Header("空腹ゲージの最大値")]
     [SerializeField] float m_stomachGauge = 100;
-    [SerializeField] bool InGame = false;
+    [Header("空腹ゲージのスライダー")]
     [SerializeField] Slider m_stomachSlider = default;
+    [Header("空腹ゲージの減少速度")]
+    [SerializeField] float m_decreaseSpeed = 0.01f;
+    [Header("ゲームの状態")]
+    [SerializeField] bool InGame = false;
+    [Header("スコアを表示するテキスト")]
+    [SerializeField] Text m_scoreText = default;
     int m_score = default;
     
 
@@ -28,9 +35,17 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
        if (InGame)
         {
-            m_stomachGauge -= Time.deltaTime;
+            m_stomachGauge -=m_decreaseSpeed;
+            m_scoreText.text = "スコア : " + m_score.ToString();
+            m_score++;
+
             if (m_stomachSlider) m_stomachSlider.value = m_stomachGauge;
-            if (m_stomachGauge <= 0) { InGame = false; Debug.Log("ゲーム終了"); }
+            
+            if (m_stomachGauge <= 0) { 
+                InGame = false;
+                EventManager.GameEnd();
+                Debug.Log("ゲーム終了"); 
+            }
         }
     }
 

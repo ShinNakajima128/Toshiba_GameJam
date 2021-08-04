@@ -60,6 +60,8 @@ public class LoadSceneManager : SingletonMonoBehaviour<LoadSceneManager>
         blue = fadeImage.color.b;
         alfa = fadeImage.color.a;
 
+        isFadeIn = true;
+
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
