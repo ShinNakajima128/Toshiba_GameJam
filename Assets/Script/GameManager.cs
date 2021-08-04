@@ -15,7 +15,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [SerializeField] bool InGame = false;
     [Header("スコアを表示するテキスト")]
     [SerializeField] Text m_scoreText = default;
+    [Header("ゲームスピード")]
     float m_gameSpeed = 1.0f;
+    [Header("ダッシュ時のスピード")]
     [SerializeField] float m_dashSpeed = 1.0f;
     float stomachGauge = default;
     int m_score = default;

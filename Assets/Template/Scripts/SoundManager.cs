@@ -2,28 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
-public enum BGMType
-{
-
-}
-
-public enum SEType
-{
-
-}
 
 public class SoundManager : SingletonMonoBehaviour<SoundManager>
 {
-    public static float m_masterVolume = 1.0f;
-    public static float m_bgmVolume = 0.1f;
-    public static float m_seVolume = 1.0f;
+    public  float m_masterVolume = 1.0f;
+    public  float m_bgmVolume = 0.1f;
+    public  float m_seVolume = 1.0f;
+    public  float m_voiceVolume = 1.0f;
+    [Header("BGMのリスト")]
     [SerializeField] AudioClip[] m_bgms = null;
+    [Header("SEのリスト")]
     [SerializeField] AudioClip[] m_ses = null;
+    [Header("Voiceのリスト")]
+    [SerializeField] AudioClip[] m_voices = null;
+    [Header("BGMのAudioSource")]
     [SerializeField] AudioSource m_bgmAudioSource = null;
+    [Header("SEのAudioSource")]
     [SerializeField] AudioSource m_seAudioSource = null;
+    [Header("VOICEのAudioSource")]
+    [SerializeField] AudioSource m_voiceAudioSource = null;
+    [Header("MasterのAudioMixer")]
+    [SerializeField] AudioMixerGroup m_masterMixer = default;
+    [Header("BGMのAudioMixer")]
+    [SerializeField] AudioMixerGroup m_bgmMixer = default;
+    [Header("SEのAudioMixer")]
+    [SerializeField] AudioMixerGroup m_seMixer = default;
+    [Header("VOICEのAudioMixer")]
+    [SerializeField] AudioMixerGroup m_voiceMixer = default;
     Dictionary<string, int> bgmIndex = new Dictionary<string, int>();
     Dictionary<string, int> seIndex = new Dictionary<string, int>();
+    Dictionary<string, int> voiceIndex = new Dictionary<string, int>();
     public static bool isLosted = false;
 
 
@@ -45,6 +55,11 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         for (int i = 0; i < m_ses.Length; i++)
         {
             seIndex.Add(m_ses[i].name, i);
+        }
+
+        for (int i = 0; i < m_voices.Length; i++)
+        {
+            voiceIndex.Add(m_voices[i].name, i);
         }
     }
 
@@ -110,9 +125,10 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     {
         m_bgmAudioSource.volume = m_bgmVolume * m_masterVolume;
         m_seAudioSource.volume = m_seVolume * m_masterVolume;
+        m_voiceAudioSource.volume = m_voiceVolume * m_masterVolume;
     }
 
-    public int GetBgmIndex(string name)
+    int GetBgmIndex(string name)
     {
         if (bgmIndex.ContainsKey(name))
         {
@@ -124,7 +140,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         }
     }
 
-    public int GetSeIndex(string name)
+    int GetSeIndex(string name)
     {
         if (seIndex.ContainsKey(name))
         {
@@ -135,7 +151,19 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
             return 0;
         }
     }
-    public void PlayBgm(int index)
+
+    public int GetVoiceIndex(string name)
+    {
+        if (voiceIndex.ContainsKey(name))
+        {
+            return voiceIndex[name];
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    void PlayBgm(int index)
     {
         if (Instance != null)
         {
@@ -148,34 +176,72 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         }
     }
 
+    /// <summary>
+    /// BGMを再生する
+    /// </summary>
+    /// <param name="name"> BGMの名前 </param>
     public void PlayBgmByName(string name)
     {
         PlayBgm(GetBgmIndex(name));
-        Debug.Log("再生");
     }
 
+    /// <summary>
+    /// BGMを止める
+    /// </summary>
     public void StopBgm()
     {
         m_bgmAudioSource.Stop();
         m_bgmAudioSource.clip = null;
     }
 
-    public void PlaySe(int index)
+    void PlaySe(int index)
     {
         index = Mathf.Clamp(index, 0, m_ses.Length);
 
         m_seAudioSource.PlayOneShot(m_ses[index], m_seVolume * m_masterVolume);
     }
 
+    /// <summary>
+    /// SEを再生する
+    /// </summary>
+    /// <param name="name"> SEの名前 </param>
     public void PlaySeByName(string name)
     {
         PlaySe(GetSeIndex(name));
     }
 
+    /// <summary>
+    /// SEを止める
+    /// </summary>
     public void StopSe()
     {
         m_seAudioSource.Stop();
         m_seAudioSource.clip = null;
+    }
+
+    void PlayVoice(int index)
+    {
+        index = Mathf.Clamp(index, 0, m_voices.Length);
+
+        m_voiceAudioSource.PlayOneShot(m_voices[index], m_voiceVolume * m_masterVolume);
+    }
+
+    /// <summary>
+    /// Voiceを再生する
+    /// </summary>
+    /// <param name="name"> BGMの名前 </param>
+    public void PlayVoiceByName(string name)
+    {
+        PlayVoice(GetVoiceIndex(name));
+    }
+
+    /// <summary>
+    /// Voiceを止める
+    /// </summary>
+    public void StopVoice()
+    {
+        m_voiceAudioSource.Stop();
+        m_voiceAudioSource.clip = null;
     }
 
     public void MasterVolChange()
@@ -192,5 +258,10 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     {
         m_seVolume = GameObject.FindGameObjectWithTag("SE").GetComponent<Slider>().value;
         Debug.Log(m_seVolume);
+    }
+    public void VoiceVolChange()
+    {
+        m_voiceVolume = GameObject.FindGameObjectWithTag("Voice").GetComponent<Slider>().value;
+        Debug.Log(m_voiceVolume);
     }
 }
