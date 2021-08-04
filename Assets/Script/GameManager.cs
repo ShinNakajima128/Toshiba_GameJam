@@ -15,11 +15,17 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [SerializeField] bool InGame = false;
     [Header("スコアを表示するテキスト")]
     [SerializeField] Text m_scoreText = default;
+    float m_gameSpeed = 1.0f;
+    [SerializeField] float m_dashSpeed = 1.0f;
     float stomachGauge = default;
     int m_score = default;
     
 
     public int GetScore { get => m_score; }
+
+    public float GetGameSpeed { get => m_gameSpeed; }
+
+    public float GetDashSpeed { get => m_dashSpeed; }
 
     private void Awake()
     {
