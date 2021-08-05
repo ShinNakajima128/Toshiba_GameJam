@@ -24,6 +24,7 @@ public class HitShot : MonoBehaviour
         m_currentHp -= damage;
         if (m_currentHp <= 0)
         {
+            EffectManager.Instance.PlayEffect(EffectType.Explosion, this.transform.position);
             Destroy(this.gameObject);
         }
     }
