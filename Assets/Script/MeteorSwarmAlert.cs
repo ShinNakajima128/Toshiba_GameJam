@@ -50,10 +50,12 @@ public class MeteorSwarmAlert : MonoBehaviour
         int type = Random.Range(0, 2);
         if (type == 0)
         {
+            SoundManager.Instance.PlayVoiceByName("Ex_2_1");
             StartCoroutine(CountDown(m_leftAlertImage, type));
         }
         else
         {
+            SoundManager.Instance.PlayVoiceByName("Ex_2_2");
             StartCoroutine(CountDown(m_rightAlertImage, type));
         }
     }
@@ -74,6 +76,7 @@ public class MeteorSwarmAlert : MonoBehaviour
         if (m_playGame)
             m_alert.text = "1";
         yield return new WaitForSeconds(1.0f);
+        SoundManager.Instance.PlaySeByName("Meteor");
         if (m_playGame)
             alertIcon.SetActive(false);
         m_alert.text = "";
