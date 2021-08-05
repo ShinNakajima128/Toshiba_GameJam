@@ -26,19 +26,27 @@ public class MeteorSwarmAlert : MonoBehaviour
     {
         if (isStartWarning || m_debugWarning)
         {
-            int type = Random.Range(0, 2);
-            if (type == 0) 
-            {
-                StartCoroutine(CountDown(m_leftAlertImage));
-            }
-            else
-            {
-                StartCoroutine(CountDown(m_rightAlertImage));
-            }
-
-            isStartWarning = false;
-            m_debugWarning = false;
+            StartMeteorSwarmAlert();
         }
+    }
+
+    /// <summary>
+    /// 流星群の警告開始
+    /// </summary>
+    public void StartMeteorSwarmAlert()
+    {
+        int type = Random.Range(0, 2);
+        if (type == 0)
+        {
+            StartCoroutine(CountDown(m_leftAlertImage));
+        }
+        else
+        {
+            StartCoroutine(CountDown(m_rightAlertImage));
+        }
+
+        isStartWarning = false;
+        m_debugWarning = false;
     }
 
     IEnumerator CountDown(GameObject alertIcon)
