@@ -80,9 +80,9 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
             {
                 PlayBgmByName("キュートなマジック！_2");
             }
-            else if (SceneManager.GetActiveScene().name == "")
+            else if (SceneManager.GetActiveScene().name == "Takeuchi")
             {
-                PlayBgmByName("");
+                PlayBgmByName("キュートなマジック！_2");
             }
             else if (SceneManager.GetActiveScene().name == "")
             {
@@ -108,9 +108,9 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
                 case "AudioTestScene":
                     PlayBgmByName("キュートなマジック！_2");
                     break;
-                    //case "":
-                    //    PlayBgmByName("");
-                    //    break;
+                case "Takeuchi":
+                    PlayBgmByName("キュートなマジック！_2");
+                    break;
                     //case "":
                     //    PlayBgmByName("");
                     //    break;
