@@ -13,7 +13,14 @@ public class HitDamage : MonoBehaviour
         {
             SoundManager.Instance.PlaySeByName("2_damage");
             GameManager.Instance.Damage(m_damage);
-            EffectManager.Instance.PlayEffect(EffectType.Explosion, this.transform.position);
+            if (m_damage > 30)
+            {
+                EffectManager.Instance.PlayEffect(EffectType.ExplosionStar, this.transform.position);
+            }
+            else
+            {
+                EffectManager.Instance.PlayEffect(EffectType.Explosion, this.transform.position);
+            }
             EffectManager.Instance.PlayShake();
             Destroy(this.gameObject);
         }

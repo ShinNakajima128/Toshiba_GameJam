@@ -5,6 +5,8 @@ using UnityEngine;
 public enum EffectType
 {
     Explosion,
+    ExplosionStar,
+    ItemGet,
 }
 /// <summary>
 /// エフェクトを再生する
@@ -14,6 +16,7 @@ public class EffectManager : MonoBehaviour
     public static EffectManager Instance { get; private set; }
     [SerializeField] GameObject[] m_effectPrefabs;
     [SerializeField] Cinemachine.CinemachineImpulseSource m_source;
+    [SerializeField] ViewText m_viewText;
     bool m_shake;
     private void Awake()
     {
@@ -51,5 +54,11 @@ public class EffectManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         m_shake = false;
+    }
+    public void ViewText(int score, Vector3 pos)
+    {
+        var text = Instantiate(m_viewText);
+        text.transform.position = pos;
+        text.SetText(score);
     }
 }

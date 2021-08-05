@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6379151748130391061}
   - component: {fileID: 6379151748130391060}
   m_Layer: 0
-  m_Name: ExplosionX 1
+  m_Name: Explosion_cross_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,7 +49,7 @@ ParticleSystem:
   serializedVersion: 6
   lengthInSec: 3
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 2
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}

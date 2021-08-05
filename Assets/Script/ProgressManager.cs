@@ -17,6 +17,7 @@ public class ProgressManager : MonoBehaviour
     [SerializeField] Text m_difficulty = default;
     [SerializeField] Slider m_progressGauge = default;
     DifficultyState difficultyState;
+    DifficultyState m_currentState;
     float progressValue = 0;
     bool isMaxed = false;
 
@@ -24,7 +25,7 @@ public class ProgressManager : MonoBehaviour
     {
         if (GameManager.Instance.GetInGame && !isMaxed)
         {
-            progressValue += Time.deltaTime * GameManager.Instance.GameSpeed * GameManager.Instance.DashSpeed;
+            progressValue += Time.deltaTime * GameManager.Instance.DashSpeed;
             m_progressGauge.value = progressValue;
 
             if (progressValue >= 0 && progressValue < 50)
@@ -52,24 +53,31 @@ public class ProgressManager : MonoBehaviour
                 isMaxed = true;
             }
         }
-
-        switch (difficultyState)
+        if (m_currentState != difficultyState)
         {
-            case DifficultyState.easy:
-                m_difficulty.text = "EASY";
-                break;
-            case DifficultyState.Normal:
-                m_difficulty.text = "NORMAL";
-                break;
-            case DifficultyState.Hard:
-                m_difficulty.text = "HARD";
-                break;
-            case DifficultyState.VeryHard:
-                m_difficulty.text = "VERYHARD";
-                break;
-            case DifficultyState.Pirate:
-                m_difficulty.text = "PIRATES";
-                break;
-        }
+            switch (difficultyState)
+            {
+                case DifficultyState.easy:
+                    m_difficulty.text = "EASY";
+                    break;
+                case DifficultyState.Normal:
+                    m_difficulty.text = "NORMAL";
+                    GameManager.Instance.AddGameSpeed(0.5f);
+                    break;
+                case DifficultyState.Hard:
+                    m_difficulty.text = "HARD";
+                    GameManager.Instance.AddGameSpeed(1f);
+                    break;
+                case DifficultyState.VeryHard:
+                    m_difficulty.text = "VERYHARD";
+                    GameManager.Instance.AddGameSpeed(1.5f);
+                    break;
+                case DifficultyState.Pirate:
+                    m_difficulty.text = "PIRATES";
+                    GameManager.Instance.AddGameSpeed(2f);
+                    break;
+            }
+            m_currentState = difficultyState;
+        }        
     }
 }

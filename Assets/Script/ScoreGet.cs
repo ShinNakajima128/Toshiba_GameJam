@@ -13,6 +13,8 @@ public class ScoreGet : MonoBehaviour
         if (other.tag == "Mouth")
         {
             GameManager.Instance.AddScore(m_score);
+            EffectManager.Instance.PlayEffect(EffectType.ItemGet, this.transform.position);
+            EffectManager.Instance.ViewText(m_score, this.transform.position);
             Destroy(this.gameObject);
         }
     }

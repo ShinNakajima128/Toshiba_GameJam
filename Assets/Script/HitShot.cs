@@ -31,7 +31,8 @@ public class HitShot : MonoBehaviour
             {
                 Instantiate(m_drop).transform.position = this.transform.position;
                 m_drop = null;
-                EffectManager.Instance.PlayShake();
+                EffectManager.Instance.PlayShake(); 
+                EffectManager.Instance.PlayEffect(EffectType.ExplosionStar, this.transform.position);
             }
             Destroy(this.gameObject);
         }

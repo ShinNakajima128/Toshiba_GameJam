@@ -14,6 +14,7 @@ public class HitRecovery : MonoBehaviour
         {
             SoundManager.Instance.PlaySeByName("3_eat");
             GameManager.Instance.Recovery(m_value);
+            EffectManager.Instance.PlayEffect(EffectType.ItemGet, this.transform.position);
             Destroy(this.gameObject);
         }
     }
