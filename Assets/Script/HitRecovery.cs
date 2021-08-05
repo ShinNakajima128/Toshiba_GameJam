@@ -12,6 +12,7 @@ public class HitRecovery : MonoBehaviour
     {
         if (other.tag == "Mouth")
         {
+            SoundManager.Instance.PlaySeByName("3_eat");
             GameManager.Instance.Recovery(m_value);
             Destroy(this.gameObject);
         }

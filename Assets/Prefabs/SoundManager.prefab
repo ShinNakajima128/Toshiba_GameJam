@@ -340,10 +340,13 @@ MonoBehaviour:
   m_bgmAudioSource: {fileID: 6768465178651428447}
   m_seAudioSource: {fileID: 1270813492973633050}
   m_voiceAudioSource: {fileID: 3377737423725967864}
-  m_masterMixer: {fileID: 0}
-  m_bgmMixer: {fileID: 0}
-  m_seMixer: {fileID: 0}
-  m_voiceMixer: {fileID: 0}
+  m_masterMixer: {fileID: 24300002, guid: e23bfe192fdbacc439ca6e9be7b66485, type: 2}
+  m_bgmMixer: {fileID: 8577642930371613437, guid: e23bfe192fdbacc439ca6e9be7b66485,
+    type: 2}
+  m_seMixer: {fileID: -2736372115550279042, guid: e23bfe192fdbacc439ca6e9be7b66485,
+    type: 2}
+  m_voiceMixer: {fileID: -5303936283921377921, guid: e23bfe192fdbacc439ca6e9be7b66485,
+    type: 2}
 --- !u!1 &7251533997199198049
 GameObject:
   m_ObjectHideFlags: 0

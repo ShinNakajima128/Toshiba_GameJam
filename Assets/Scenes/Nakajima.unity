@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2d056ac30ecc9e542b26e06133f23602, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -560,16 +560,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7150421856423063891, guid: 0f30bf0cb890ab848bf8684d1807e717,
-        type: 3}
-      propertyPath: isFadeOut
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7150421856423063891, guid: 0f30bf0cb890ab848bf8684d1807e717,
-        type: 3}
-      propertyPath: isFadeIn
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7150421856423063892, guid: 0f30bf0cb890ab848bf8684d1807e717,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -629,11 +619,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LoadSceneManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 7150421856423063893, guid: 0f30bf0cb890ab848bf8684d1807e717,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f30bf0cb890ab848bf8684d1807e717, type: 3}
@@ -707,7 +692,7 @@ PrefabInstance:
     - target: {fileID: 93299370484158006, guid: 07ac18c707c44b34894ae551f6516708,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07ac18c707c44b34894ae551f6516708, type: 3}
@@ -920,7 +905,7 @@ PrefabInstance:
     - target: {fileID: 1521203960792730295, guid: 265be291f8d8a2f4197c4f9ec3c050a0,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 265be291f8d8a2f4197c4f9ec3c050a0, type: 3}
@@ -1132,7 +1117,7 @@ PrefabInstance:
     - target: {fileID: 8599503538669203321, guid: 258ddc0855ff34c4e8238c20837d0641,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8599503539118789704, guid: 258ddc0855ff34c4e8238c20837d0641,
         type: 3}
@@ -1142,7 +1127,7 @@ PrefabInstance:
     - target: {fileID: 8599503539118789704, guid: 258ddc0855ff34c4e8238c20837d0641,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8599503539118789711, guid: 258ddc0855ff34c4e8238c20837d0641,
         type: 3}
@@ -1202,7 +1187,7 @@ PrefabInstance:
     - target: {fileID: 8599503539989586696, guid: 258ddc0855ff34c4e8238c20837d0641,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8599503540476305268, guid: 258ddc0855ff34c4e8238c20837d0641,
         type: 3}
@@ -1288,6 +1273,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8855061065973240112, guid: 41fbc59f9b87edb4581c79d558a15872,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 818865573}
     - target: {fileID: 8855061066894698330, guid: 41fbc59f9b87edb4581c79d558a15872,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

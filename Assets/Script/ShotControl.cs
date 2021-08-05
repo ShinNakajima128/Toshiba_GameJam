@@ -24,6 +24,7 @@ public class ShotControl : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1")||Input.GetButtonDown("Jump"))
             {
+                SoundManager.Instance.PlaySeByName("1_shot_fix");
                 Instantiate(m_shotPrefab).transform.position = m_muzzle.position;
                 m_shotTimer = m_shotInterval;
             }
