@@ -306,7 +306,9 @@ MonoBehaviour:
   m_bgmVolume: 0.1
   m_seVolume: 1
   m_voiceVolume: 1
-  m_bgms: []
+  m_bgms:
+  - {fileID: 8300000, guid: 2df47d60aab395c44b4711a0217e39ef, type: 3}
+  - {fileID: 8300000, guid: b784d994251ab584088ffef591fb5a68, type: 3}
   m_ses:
   - {fileID: 8300000, guid: f4dcd3008c55aed41aa09489c37ba5bb, type: 3}
   - {fileID: 8300000, guid: 5173fca0c969f244e89877cbe5dbd319, type: 3}

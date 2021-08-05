@@ -692,7 +692,7 @@ PrefabInstance:
     - target: {fileID: 93299370484158006, guid: 07ac18c707c44b34894ae551f6516708,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07ac18c707c44b34894ae551f6516708, type: 3}
@@ -1278,6 +1278,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 818865573}
+    - target: {fileID: 8855061065973240112, guid: 41fbc59f9b87edb4581c79d558a15872,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: AudioTestScene
+      objectReference: {fileID: 0}
     - target: {fileID: 8855061066894698330, guid: 41fbc59f9b87edb4581c79d558a15872,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

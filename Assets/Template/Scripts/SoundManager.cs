@@ -70,15 +70,15 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
             SceneManager.sceneLoaded += OnSceneLoaded;
             if (SceneManager.GetActiveScene().name == "Title")
             {
-                PlayBgmByName("Title");
+                PlayBgmByName("space_elevator");
             }
-            else if (SceneManager.GetActiveScene().name == "")
+            else if (SceneManager.GetActiveScene().name == "Nakajima")
             {
-                PlayBgmByName("");
+                PlayBgmByName("space_elevator");
             }
-            else if (SceneManager.GetActiveScene().name == "")
+            else if (SceneManager.GetActiveScene().name == "AudioTestScene")
             {
-                PlayBgmByName("");
+                PlayBgmByName("キュートなマジック！_2");
             }
             else if (SceneManager.GetActiveScene().name == "")
             {
@@ -105,18 +105,18 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
                 case "Title":
                     PlayBgmByName("Title");
                     break;
-                //case "":
-                //    PlayBgmByName("");
-                //    break;
-                //case "":
-                //    PlayBgmByName("");
-                //    break;
-                //case "":
-                //    PlayBgmByName("");
-                //    break;
-                //case "":
-                //    PlayBgmByName("");
-                //    break;
+                case "AudioTestScene":
+                    PlayBgmByName("キュートなマジック！_2");
+                    break;
+                    //case "":
+                    //    PlayBgmByName("");
+                    //    break;
+                    //case "":
+                    //    PlayBgmByName("");
+                    //    break;
+                    //case "":
+                    //    PlayBgmByName("");
+                    //    break;
             }
         } 
     }
