@@ -48,6 +48,7 @@ public class TitleManager : MonoBehaviour
 
     public void StartActive()
     {
+        SoundManager.Instance.PlaySeByName("5_2_cancel");
         m_titleState = TitleState.Start;
         if (m_main.activeSelf) m_main.SetActive(false);
         
@@ -59,6 +60,7 @@ public class TitleManager : MonoBehaviour
     /// </summary>
     public void MainActive()
     {
+        SoundManager.Instance.PlaySeByName("5_1_select");
         m_titleState = TitleState.Main;
         if (m_start.activeSelf) m_start.SetActive(false);
         if (m_audio.activeSelf) m_audio.SetActive(false);
@@ -71,6 +73,7 @@ public class TitleManager : MonoBehaviour
     /// </summary>
     public void AudioActive()
     {
+        SoundManager.Instance.PlaySeByName("5_1_select");
         m_titleState = TitleState.Audio;
         if (m_main.activeSelf) m_main.SetActive(false);
         m_audio.SetActive(true);
@@ -80,6 +83,7 @@ public class TitleManager : MonoBehaviour
     /// </summary>
     public void HelpActive()
     {
+        SoundManager.Instance.PlaySeByName("5_1_select");
         m_titleState = TitleState.Help;
         if (m_main.activeSelf) m_main.SetActive(false);
         m_help.SetActive(true);
