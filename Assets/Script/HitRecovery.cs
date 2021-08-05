@@ -10,7 +10,7 @@ public class HitRecovery : MonoBehaviour
     [SerializeField] int m_value = 20;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Mouth")
         {
             GameManager.Instance.Recovery(m_value);
             Destroy(this.gameObject);

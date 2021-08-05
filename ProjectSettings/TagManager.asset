@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GameArea
   - Shot
+  - Mouth
   layers:
   - Default
   - TransparentFX

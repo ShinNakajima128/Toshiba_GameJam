@@ -10,7 +10,7 @@ public class ScoreGet : MonoBehaviour
     [SerializeField] int m_score = 100;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Mouth")
         {
             GameManager.Instance.AddScore(m_score);
             Destroy(this.gameObject);
