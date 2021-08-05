@@ -21,6 +21,7 @@ public class HitDamage : MonoBehaviour
             {
                 EffectManager.Instance.PlayEffect(EffectType.Explosion, this.transform.position);
             }
+            EffectManager.Instance.ViewText(m_damage, this.transform.position, Color.red);
             EffectManager.Instance.PlayShake();
             Destroy(this.gameObject);
         }

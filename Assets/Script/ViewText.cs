@@ -31,4 +31,14 @@ public class ViewText : MonoBehaviour
         }
         m_text.text = text.ToString();
     }
+    public void SetText(int text,Color color)
+    {
+        if (text == 0)
+        {
+            m_timer = 0;
+            return;
+        }
+        m_text.text = text.ToString();
+        m_text.color = color;
+    }
 }

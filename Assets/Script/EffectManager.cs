@@ -61,4 +61,10 @@ public class EffectManager : MonoBehaviour
         text.transform.position = pos;
         text.SetText(score);
     }
+    public void ViewText(int score, Vector3 pos, Color color)
+    {
+        var text = Instantiate(m_viewText);
+        text.transform.position = pos;
+        text.SetText(score, color);
+    }
 }
