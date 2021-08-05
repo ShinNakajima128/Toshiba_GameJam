@@ -85,6 +85,7 @@ public class LoadSceneManager : SingletonMonoBehaviour<LoadSceneManager>
 
     public void LoadGameScene()
     {
+        SoundManager.Instance.PlayVoiceByName("start");
         isFadeOut = true;
         StartCoroutine(LoadScene(m_gameScene, m_LoadTimer));
     }

@@ -96,6 +96,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
                 if (m_dashEffect)
                     m_dashEffect.SetActive(false);
                 Debug.Log("ゲーム終了");
+                SoundManager.Instance.PlayVoiceByName("gameover");
                 LoadSceneManager.Instance.LoadResultScene();
                 return;
             }
