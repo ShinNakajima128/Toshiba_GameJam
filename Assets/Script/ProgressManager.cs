@@ -24,7 +24,7 @@ public class ProgressManager : MonoBehaviour
     {
         if (GameManager.Instance.GetInGame && !isMaxed)
         {
-            progressValue += Time.deltaTime * GameManager.Instance.GetGameSpeed * GameManager.Instance.GetDashSpeed;
+            progressValue += Time.deltaTime * GameManager.Instance.GameSpeed * GameManager.Instance.DashSpeed;
             m_progressGauge.value = progressValue;
 
             if (progressValue >= 0 && progressValue < 50)

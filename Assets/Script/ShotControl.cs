@@ -22,7 +22,7 @@ public class ShotControl : MonoBehaviour
         }
         if (m_shotTimer <= 0)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1")||Input.GetButtonDown("Jump"))
             {
                 Instantiate(m_shotPrefab).transform.position = m_muzzle.position;
                 m_shotTimer = m_shotInterval;

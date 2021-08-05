@@ -15,6 +15,7 @@ public class HitShot : MonoBehaviour
     {
         if (other.tag == "Shot")
         {
+            EffectManager.Instance.PlayEffect(EffectType.Explosion, other.gameObject.transform.position);
             Destroy(other.gameObject);
             HitDamage(1);
         }
