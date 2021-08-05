@@ -64,9 +64,8 @@ public class LoadSceneManager : SingletonMonoBehaviour<LoadSceneManager>
         isFadeIn = true;
     }
 
-    void Update()
+    private void LateUpdate()
     {
-        /// When the fade-in begins
         if (isFadeIn)
         {
             StartFadeIn();
@@ -79,8 +78,8 @@ public class LoadSceneManager : SingletonMonoBehaviour<LoadSceneManager>
 
         if (m_debugMode)
         {
-           
-        }   
+
+        }
     }
 
     public void LoadGameScene()

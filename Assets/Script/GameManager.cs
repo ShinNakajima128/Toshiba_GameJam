@@ -25,7 +25,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [Header("デバッグ用のリスタートボタン")]
     [SerializeField] GameObject m_restartButton = default;
     float stomachGauge = default;
-    int m_score = default;
+    static int m_score = default;
     [SerializeField] GameObject m_dashEffect;
 
     public int GetScore { get => m_score; }
