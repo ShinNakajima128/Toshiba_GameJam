@@ -27,6 +27,7 @@ public class TitleManager : MonoBehaviour
 
     void Start()
     {
+        SoundManager.Instance.PlayVoiceByName("Ex_1_1");
         m_start.SetActive(true);
         m_main.SetActive(false);
         m_audio.SetActive(false);

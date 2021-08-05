@@ -150,6 +150,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     /// <param name="value"> 回復量 </param>
     public void Recovery(int value)
     {
+        SoundManager.Instance.PlayVoiceByName("");
         stomachGauge += value;
 
         if (stomachGauge >= 100)

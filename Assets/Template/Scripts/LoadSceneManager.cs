@@ -8,14 +8,8 @@ public class LoadSceneManager : SingletonMonoBehaviour<LoadSceneManager>
 {
     /// <summary> タイトル </summary>
     [SerializeField] string m_titleScene = "Title";
-    /// <summary> イージー </summary>
-    [SerializeField] string m_easyScene = "";
-    /// <summary> ノーマル </summary>
-    [SerializeField] string m_normalScene = "";
-    /// <summary> ハード </summary>
-    [SerializeField] string m_hardScene = "";
-    /// <summary> 各ステージ </summary>
-    [SerializeField] string[] m_stageScenes = default;
+    /// <summary> ゲームシーン </summary>
+    [SerializeField] string m_gameScene = "";
     /// <summary> リザルト </summary>
     [SerializeField] string m_resultScene = "";
     /// <summary> ロードする時間 </summary>
@@ -89,6 +83,11 @@ public class LoadSceneManager : SingletonMonoBehaviour<LoadSceneManager>
         }   
     }
 
+    public void LoadGameScene()
+    {
+        isFadeOut = true;
+        StartCoroutine(LoadScene(m_gameScene, m_LoadTimer));
+    }
     /// <summary> Transition to the next Scene </summary>
     public void LoadNextStage(string name)
     {

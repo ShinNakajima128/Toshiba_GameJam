@@ -339,6 +339,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 498438fadc8e94742bddb44447d3b328, type: 3}
   - {fileID: 8300000, guid: 356b7e1fbd272ed40a341acd7997cb45, type: 3}
   - {fileID: 8300000, guid: bebe0757fff7d634493bccc39e3c0c83, type: 3}
+  - {fileID: 8300000, guid: 48abb6c7d2e742148af48d946ad8f848, type: 3}
+  - {fileID: 8300000, guid: 9b570a8113dbee84eb32549ca86f245b, type: 3}
+  - {fileID: 8300000, guid: 1562a809002da244fbda319d70cf8193, type: 3}
+  - {fileID: 8300000, guid: 75e8a2c26dfe00d4f8d6431f0ed67209, type: 3}
+  - {fileID: 8300000, guid: 29e9d0b3798c0ca499036f4963022034, type: 3}
+  - {fileID: 8300000, guid: e325acde7b498304a93622f063511bb0, type: 3}
   m_bgmAudioSource: {fileID: 6768465178651428447}
   m_seAudioSource: {fileID: 1270813492973633050}
   m_voiceAudioSource: {fileID: 3377737423725967864}
