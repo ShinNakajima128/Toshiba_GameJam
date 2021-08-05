@@ -44,7 +44,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             return;
         }
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     private void Start()

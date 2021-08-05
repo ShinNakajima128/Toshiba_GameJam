@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Nakajima.unity
+    guid: 98be003f7db4601459d35b4c5d857111
+  - enabled: 1
+    path: Assets/Scenes/AudioTestScene.unity
+    guid: 42fe96b1a59dd424babc8a54df2aaa37
+  - enabled: 1
+    path: Assets/Scenes/Takeuchi.unity
+    guid: 3de018fc98f823b4ba680b80eb3057b8
+  - enabled: 1
+    path: Assets/Scenes/DubugScene.unity
+    guid: cfeabc7af1acebd47b7639c043beca77
   m_configObjects: {}
