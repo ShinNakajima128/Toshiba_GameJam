@@ -31,7 +31,7 @@ public class SpawnControl : MonoBehaviour
         if (!m_spawn) return;
         for (int i = 0; i < m_timers.Length; i++)
         {
-            m_timers[i] += m_spawnSpeed[i] * m_allSpawnSpeed[i] * Time.deltaTime;
+            m_timers[i] += m_spawnSpeed[i] * m_allSpawnSpeed[i] * Time.deltaTime * GameManager.Instance.DashSpeed;
             if (m_timers[i] >= m_spawnTime[i])
             {
                 m_spawnObjects[i].Spawn(m_spwanPos[m_count].position);

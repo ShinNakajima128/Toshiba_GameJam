@@ -20,7 +20,7 @@ public class SelectDirMove : MoveControl
     void Update()
     {
         if (!m_moveF) return;
-        m_rB.velocity = m_dir * m_moveSpeed;
+        m_rB.velocity = m_dir * m_moveSpeed * GameManager.Instance.DashSpeed;
     }
     public override void GameEnd()
     {

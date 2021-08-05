@@ -18,19 +18,21 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [SerializeField] Text m_scoreText = default;
     [Header("ゲームスピード")]
     [SerializeField] float m_gameSpeed = 1.0f;
+    float m_currentGameSpeed = 1f;
     [Header("ダッシュ時のスピード")]
     [SerializeField] float m_dashSpeed = 1.0f;
+    float m_currentDashSpeed = 1f;
     [Header("デバッグ用のリスタートボタン")]
     [SerializeField] GameObject m_restartButton = default;
     float stomachGauge = default;
     int m_score = default;
-    
+    [SerializeField] GameObject m_dashEffect;
 
     public int GetScore { get => m_score; }
 
-    public float GetGameSpeed { get => m_gameSpeed; }
+    public float GameSpeed { get => m_currentGameSpeed; }
 
-    public float GetDashSpeed { get => m_dashSpeed; }
+    public float DashSpeed { get => m_currentDashSpeed * GameSpeed; }
 
     public bool GetInGame { get => InGame; }
 
@@ -82,22 +84,45 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     }
     private void Update()
     {
-       if (InGame)
+        if (InGame)
         {
             stomachGauge -= Time.deltaTime * m_decreaseSpeed;
-            m_scoreText.text = "スコア : " + m_score.ToString();
-
             if (m_stomachSlider) m_stomachSlider.value = stomachGauge;
-            
-            if (stomachGauge <= 0) { 
+            if (stomachGauge <= 0)
+            {
                 InGame = false;
                 m_restartButton.SetActive(true);
-                EventManager.GameEnd();
-                Debug.Log("ゲーム終了"); 
+                EventManager.GameEnd(); 
+                if (m_dashEffect)
+                    m_dashEffect.SetActive(false);
+                Debug.Log("ゲーム終了");
+                return;
+            }
+            if (Input.GetButton("Dash"))
+            {
+                m_currentDashSpeed = m_dashSpeed;
+                if (m_dashEffect)
+                    m_dashEffect.SetActive(true);
+            }
+            else
+            {
+                if (m_dashEffect)
+                    m_dashEffect.SetActive(false);
+                m_currentDashSpeed = 1f;
             }
         }
     }
-
+    public void GameStart()
+    {
+        EventManager.GameStart();
+        m_restartButton.SetActive(false);
+        m_currentGameSpeed = m_gameSpeed;
+        m_currentDashSpeed = 1f;
+        m_score = 0;
+        m_scoreText.text = "スコア : " + m_score.ToString();
+        if (m_dashEffect)
+            m_dashEffect.SetActive(false);
+    }
     /// <summary>
     /// ゲームをリスタートする。デバッグボタン用
     /// </summary>
@@ -116,6 +141,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public void AddScore(int value)
     {
         m_score += value;
+        m_scoreText.text = "スコア : " + m_score.ToString();
     }
 
     /// <summary>
