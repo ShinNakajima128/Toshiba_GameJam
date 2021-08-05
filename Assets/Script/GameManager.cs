@@ -52,15 +52,13 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         SceneManager.sceneLoaded += OnSceneLoaded;
         m_restartButton.SetActive(false);
         stomachGauge = m_stomachGauge;
-        InGame = true;
-
         if (SceneManager.GetActiveScene().name == "Title")
         {
 
         }
-        else if (SceneManager.GetActiveScene().name == "GameSCene")
+        else if (SceneManager.GetActiveScene().name == "Takeuchi")
         {
-
+            Restart();
         }
         else if (SceneManager.GetActiveScene().name == "Result")
         {
@@ -77,7 +75,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         switch (SceneManager.GetActiveScene().name)
         {
-            case "GameScene":
+            case "Ryu":
+                break;
+            default:
                 m_score = 0;
                 break;
         }
@@ -92,12 +92,12 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             {
                 InGame = false;
                 //m_restartButton.SetActive(true);
-                EventManager.GameEnd(); 
+                Debug.Log("ゲーム終了");
+                LoadSceneManager.Instance.LoadResultScene();
+                SoundManager.Instance.PlayVoiceByName("gameover");
                 if (m_dashEffect)
                     m_dashEffect.SetActive(false);
-                Debug.Log("ゲーム終了");
-                SoundManager.Instance.PlayVoiceByName("gameover");
-                LoadSceneManager.Instance.LoadResultScene();
+                EventManager.GameEnd();
                 return;
             }
             if (Input.GetButton("Dash"))
@@ -133,7 +133,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         InGame = true;
         stomachGauge = m_stomachGauge;
         EventManager.GameStart();
-        m_restartButton.SetActive(false);
+        //m_restartButton.SetActive(false);
     }
 
     /// <summary>
