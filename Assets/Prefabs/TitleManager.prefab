@@ -399,7 +399,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u30DE\u30B9\u30BF\u30FC\u97F3\u91CF"
+  m_Text: MASTER
 --- !u!114 &8855061065828823234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1567,7 +1567,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u30DE\u30B9\u30BF\u30FC\u97F3\u91CF"
+  m_Text: SE
 --- !u!114 &8855061066204907038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3192,7 +3192,7 @@ GameObject:
   - component: {fileID: 8855061066557447568}
   - component: {fileID: 8855061066557447583}
   m_Layer: 5
-  m_Name: MasterText
+  m_Name: BGMText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3257,7 +3257,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u30DE\u30B9\u30BF\u30FC\u97F3\u91CF"
+  m_Text: BGM
 --- !u!114 &8855061066557447583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5234,7 +5234,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u30DE\u30B9\u30BF\u30FC\u97F3\u91CF"
+  m_Text: VOICE
 --- !u!114 &8855061067463801408
 MonoBehaviour:
   m_ObjectHideFlags: 0
