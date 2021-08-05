@@ -322,6 +322,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: feeb4221e2f29af44944a3b73f2a023d, type: 3}
   - {fileID: 8300000, guid: 7ad0fa99faf2fd747a85798d0b9f1de0, type: 3}
   - {fileID: 8300000, guid: 0dbf582f6e62fe84cb255e3913a810cc, type: 3}
+  - {fileID: 8300000, guid: 7953f1b2b55751a4583fe17647b20a51, type: 3}
   m_voices:
   - {fileID: 8300000, guid: 31ae7dbe981f91e469387aa31597b40f, type: 3}
   - {fileID: 8300000, guid: 3a9a34e158830c645b95fd56a0657ab8, type: 3}
@@ -345,6 +346,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 75e8a2c26dfe00d4f8d6431f0ed67209, type: 3}
   - {fileID: 8300000, guid: 29e9d0b3798c0ca499036f4963022034, type: 3}
   - {fileID: 8300000, guid: e325acde7b498304a93622f063511bb0, type: 3}
+  - {fileID: 8300000, guid: 38994bc5d42e8cd4fbeda8e0fc896d13, type: 3}
+  - {fileID: 8300000, guid: 5541e15b6f531804784462d042d15100, type: 3}
   m_bgmAudioSource: {fileID: 6768465178651428447}
   m_seAudioSource: {fileID: 1270813492973633050}
   m_voiceAudioSource: {fileID: 3377737423725967864}

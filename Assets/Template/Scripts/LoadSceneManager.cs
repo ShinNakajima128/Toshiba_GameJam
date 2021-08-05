@@ -94,7 +94,14 @@ public class LoadSceneManager : SingletonMonoBehaviour<LoadSceneManager>
         isFadeOut = true;
         StartCoroutine(LoadScene(name, m_LoadTimer));
     }
-   
+
+    public void LoadResultScene()
+    {
+        Time.timeScale = 1f;
+        isFadeOut = true;
+        StartCoroutine(LoadScene(m_resultScene, m_LoadTimer));
+    }
+
     /// <summary> Transition to the TitleScene </summary>
     public void LoadTitleScene()
     {

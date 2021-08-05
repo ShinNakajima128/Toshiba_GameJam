@@ -91,11 +91,12 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             if (stomachGauge <= 0)
             {
                 InGame = false;
-                m_restartButton.SetActive(true);
+                //m_restartButton.SetActive(true);
                 EventManager.GameEnd(); 
                 if (m_dashEffect)
                     m_dashEffect.SetActive(false);
                 Debug.Log("ゲーム終了");
+                LoadSceneManager.Instance.LoadResultScene();
                 return;
             }
             if (Input.GetButton("Dash"))
@@ -140,6 +141,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     /// <param name="value"> 加算する量 </param>
     public void AddScore(int value)
     {
+        SoundManager.Instance.PlaySeByName("8_get_tresure");
         m_score += value;
         m_scoreText.text = "スコア : " + m_score.ToString();
     }
@@ -150,7 +152,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     /// <param name="value"> 回復量 </param>
     public void Recovery(int value)
     {
-        SoundManager.Instance.PlayVoiceByName("");
+        SoundManager.Instance.PlayVoiceByName("3-1");
         stomachGauge += value;
 
         if (stomachGauge >= 100)
@@ -166,5 +168,10 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public void Damage(int value)
     {
         stomachGauge -= value;
+    }
+
+    public void AddGameSpeed(float value)
+    {
+        m_currentGameSpeed += value;
     }
 }
