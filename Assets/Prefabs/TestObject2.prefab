@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dir: {x: 1, y: 1, z: 0}
-  m_rotateSpeed: 5
+  m_rotateSpeed: 3
 --- !u!1 &5215310630805361651
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hp: 0
+  m_drop: {fileID: 0}
 --- !u!65 &-3792214902970202071
 BoxCollider:
   m_ObjectHideFlags: 0

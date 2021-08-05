@@ -477,6 +477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hp: 5
+  m_drop: {fileID: 4999231572767271538, guid: 52fec2760f2208f449b58fe0d031fd62, type: 3}
 --- !u!65 &5419050395813356781
 BoxCollider:
   m_ObjectHideFlags: 0

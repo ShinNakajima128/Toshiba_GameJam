@@ -6,6 +6,7 @@ public class HitShot : MonoBehaviour
 {
     [Header("弾に耐えられる耐久度")]
     [SerializeField] int m_hp = 0;
+    [SerializeField] GameObject m_drop;
     int m_currentHp;
     private void Start()
     {
@@ -26,6 +27,12 @@ public class HitShot : MonoBehaviour
         if (m_currentHp <= 0)
         {
             EffectManager.Instance.PlayEffect(EffectType.Explosion, this.transform.position);
+            if (m_drop)
+            {
+                Instantiate(m_drop).transform.position = this.transform.position;
+                m_drop = null;
+                EffectManager.Instance.PlayShake();
+            }
             Destroy(this.gameObject);
         }
     }

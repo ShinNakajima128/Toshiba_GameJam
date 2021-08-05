@@ -63,19 +63,16 @@ public class MeteorSwarmAlert : MonoBehaviour
         m_alert.text = "流星群が近づいている！";
         alertIcon.SetActive(true);
         SoundManager.Instance.PlaySeByName("6_1_alart");
-
+        EffectManager.Instance.PlayShake(8f);
         yield return new WaitForSeconds(2.0f);
         if (m_playGame)
             m_alert.text = "3";
-
         yield return new WaitForSeconds(1.0f);
         if (m_playGame)
             m_alert.text = "2";
-
         yield return new WaitForSeconds(1.0f);
         if (m_playGame)
             m_alert.text = "1";
-
         yield return new WaitForSeconds(1.0f);
         if (m_playGame)
             alertIcon.SetActive(false);

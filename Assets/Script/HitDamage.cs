@@ -14,6 +14,7 @@ public class HitDamage : MonoBehaviour
             SoundManager.Instance.PlaySeByName("2_damage");
             GameManager.Instance.Damage(m_damage);
             EffectManager.Instance.PlayEffect(EffectType.Explosion, this.transform.position);
+            EffectManager.Instance.PlayShake();
             Destroy(this.gameObject);
         }
     }
