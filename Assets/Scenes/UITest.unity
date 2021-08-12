@@ -10325,8 +10325,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e72be984e542e44a9df2d5170b964d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_textList: []
-  m_imageList: []
+  m_textList:
+  - 
+  - "\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u3051\u305F\u307F\u305F\u3044\u2026"
+  - "\u98DF\u6599\u304C\u624B\u306B\u5165\u3063\u305F\u3088\uFF01"
+  - "\u9695\u77F3\u306E\u7834\u58CA\u306B\u6210\u529F\u3057\u305F\u3088\uFF01"
+  - "\u98DF\u6599\u304C\u8DB3\u308A\u306A\u3044\u3088\u30FC\uFF01"
+  - "\u3088\u3051\u3066\uFF01"
+  - "\u3075\u3045\u3001\u5371\u306A\u304B\u3063\u305F\u306D"
+  m_spriteList:
+  - {fileID: 21300000, guid: 11f3d23290d3e024aa3f48a1897b1660, type: 3}
+  - {fileID: 21300000, guid: a0c137b92f8dcf748b20af4041fc218e, type: 3}
+  - {fileID: 21300000, guid: 2b9e84dd363da434d97a5f4fdce4e0cb, type: 3}
+  - {fileID: 21300000, guid: 668d46c0d5c33e949bd31b0b54fbad5f, type: 3}
+  - {fileID: 21300000, guid: d671d1e68c0077144a14689feb754dc6, type: 3}
+  - {fileID: 21300000, guid: 5fd3fed556506ba4abee535797a02ce3, type: 3}
+  - {fileID: 21300000, guid: 7556c8d526da6154894b082e5917c670, type: 3}
   m_aiText: {fileID: 712564007}
   m_aiImage: {fileID: 361814128}
 --- !u!1 &974872461
