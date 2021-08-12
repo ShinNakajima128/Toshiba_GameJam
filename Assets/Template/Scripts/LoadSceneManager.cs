@@ -54,14 +54,23 @@ public class LoadSceneManager : SingletonMonoBehaviour<LoadSceneManager>
         blue = fadeImage.color.b;
         alfa = fadeImage.color.a;
 
-        isFadeIn = true;
+        if (alfa > 0)
+        {
+            isFadeOut = false;
+            isFadeIn = true;
+        }
+        
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene nextScene, LoadSceneMode mode)
     {
-        isFadeIn = true;
+        if (alfa > 0)
+        {
+            isFadeOut = false;
+            isFadeIn = true;
+        }
     }
 
     private void LateUpdate()

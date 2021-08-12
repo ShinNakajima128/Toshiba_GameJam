@@ -54,7 +54,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         stomachGauge = m_stomachGauge;
         if (SceneManager.GetActiveScene().name == "Title")
         {
-
+            SoundManager.Instance.PlayVoiceByName("result");
         }
         else if (SceneManager.GetActiveScene().name == "Takeuchi")
         {
@@ -76,6 +76,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         switch (SceneManager.GetActiveScene().name)
         {
             case "Ryu":
+                SoundManager.Instance.StopVoice();
+                SoundManager.Instance.PlayVoiceByName("result");
                 break;
             default:
                 m_score = 0;

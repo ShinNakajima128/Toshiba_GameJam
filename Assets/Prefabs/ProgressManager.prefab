@@ -194,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_difficulty: {fileID: 8599503540476305274}
   m_progressGauge: {fileID: 8599503539255850647}
+  m_textAnim: {fileID: 1641685318}
 --- !u!1 &8599503539255850641
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +231,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 836, y: 0}
+  m_AnchoredPosition: {x: 820, y: 0}
   m_SizeDelta: {x: 20, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8599503539255850647
@@ -277,7 +278,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 8599503539989586696}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 250
+  m_MaxValue: 120
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -541,6 +542,7 @@ GameObject:
   - component: {fileID: 8599503540476305273}
   - component: {fileID: 8599503540476305274}
   - component: {fileID: 8599503540476305275}
+  - component: {fileID: 1641685318}
   m_Layer: 5
   m_Name: DifficultyText
   m_TagString: Untagged
@@ -564,7 +566,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 835.2, y: 460.4}
+  m_AnchoredPosition: {x: 819.2, y: 460.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8599503540476305273
@@ -588,7 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -598,7 +600,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: a7afb635fcf16e44d9f8fba6b855c425, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 118
     m_Alignment: 4
@@ -607,7 +609,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: EASY
+  m_Text: PAIRATES
 --- !u!114 &8599503540476305275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,3 +625,22 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
+--- !u!95 &1641685318
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8599503540476305269}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fcde31908a0355e4eb0593a74700a097, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
