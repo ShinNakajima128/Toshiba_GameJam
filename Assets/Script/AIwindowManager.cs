@@ -120,7 +120,7 @@ public class AIwindowManager : MonoBehaviour
                 SoundManager.Instance.PlayVoiceByName("Ex_2_1");
                 break;
             case AIState.Shoot:
-                SoundManager.Instance.PlayVoiceByName("");
+                SoundManager.Instance.PlayVoiceByName("OpenFire2");
                 break;
         }
     }

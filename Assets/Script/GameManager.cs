@@ -64,6 +64,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             {
                 m_currentLaserGauge = m_maxLaserGauge;
             }
+            EventManager.EPEvent(m_currentLaserGauge, m_maxLaserGauge);
         } 
     } 
 
