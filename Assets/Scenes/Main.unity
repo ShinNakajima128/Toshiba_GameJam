@@ -211,17 +211,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2081767838}
     m_Modifications:
-    - target: {fileID: 352158377551909384, guid: d546fa7ee553bc342a8ec51b439f6fc3,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 71
-      objectReference: {fileID: 0}
-    - target: {fileID: 352158377551909390, guid: d546fa7ee553bc342a8ec51b439f6fc3,
-        type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: a7afb635fcf16e44d9f8fba6b855c425,
-        type: 3}
     - target: {fileID: 352158377840631706, guid: d546fa7ee553bc342a8ec51b439f6fc3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -285,7 +274,7 @@ PrefabInstance:
     - target: {fileID: 352158377840631706, guid: d546fa7ee553bc342a8ec51b439f6fc3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1045
+      value: -163.7
       objectReference: {fileID: 0}
     - target: {fileID: 352158377840631706, guid: d546fa7ee553bc342a8ec51b439f6fc3,
         type: 3}
@@ -359,7 +348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128692710}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4, y: -3.5, z: 9}
+  m_LocalPosition: {x: -4.81, y: 5.33, z: 14.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 974872464}
@@ -10798,6 +10787,16 @@ PrefabInstance:
       propertyPath: fadeSpeedValue
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7150421856423063891, guid: 0f30bf0cb890ab848bf8684d1807e717,
+        type: 3}
+      propertyPath: m_gameScene
+      value: Main
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150421856423063891, guid: 0f30bf0cb890ab848bf8684d1807e717,
+        type: 3}
+      propertyPath: m_titleScene
+      value: Nakajima
+      objectReference: {fileID: 0}
     - target: {fileID: 7150421856423063892, guid: 0f30bf0cb890ab848bf8684d1807e717,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16316,16 +16315,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AIWindow
-      objectReference: {fileID: 0}
-    - target: {fileID: 7800363371684353126, guid: de781dc2cd7a4f5459d41234da9c0592,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -344
-      objectReference: {fileID: 0}
-    - target: {fileID: 7800363371684353126, guid: de781dc2cd7a4f5459d41234da9c0592,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 535
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de781dc2cd7a4f5459d41234da9c0592, type: 3}

@@ -169,8 +169,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             {
                 InGame = false;
                 Debug.Log("ゲーム終了");
-                LoadSceneManager.Instance.LoadResultScene();
-                SoundManager.Instance.PlayVoiceByName("gameover");
+                StartCoroutine(LoadResult());
+                AIwindowManager.Instance.ChangeAIByState(AIState.Gameover);
                 if (m_dashEffect)
                     m_dashEffect.SetActive(false);
                 EventManager.GameEnd();
@@ -230,11 +230,11 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     /// <param name="value"> 回復量 </param>
     public void Recovery(int value)
     {
-        SoundManager.Instance.PlayVoiceByName("3-1");
+        SoundManager.Instance.PlaySeByName("3_eat");
 
         if (!LaserManager.isShooted)
         {
-            m_currentLaserGauge += value / 5;
+            m_currentLaserGauge += value / 3;
             EventManager.EPEvent(m_currentLaserGauge, m_maxLaserGauge);
         }
 
@@ -273,5 +273,12 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         yield return new WaitForSeconds(m_announceInterval);
 
         isStateChanged = false;
+    }
+
+    IEnumerator LoadResult()
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        LoadSceneManager.Instance.LoadResultScene();
     }
 }

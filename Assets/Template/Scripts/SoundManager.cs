@@ -84,7 +84,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
             {
                 PlayBgmByName("キュートなマジック！_2");
             }
-            else if (SceneManager.GetActiveScene().name == "UITest")
+            else if (SceneManager.GetActiveScene().name == "Main")
             {
                 PlayBgmByName("キュートなマジック！_2");
             }
@@ -116,7 +116,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
                 case "Takeuchi":
                     PlayBgmByName("キュートなマジック！_2");
                     break;
-                case "UITest":
+                case "Main":
                     PlayBgmByName("キュートなマジック！_2");
                     break;
                 case "Ryu":

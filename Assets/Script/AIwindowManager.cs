@@ -16,11 +16,14 @@ public enum AIState
     GaugeMax,
     DodgeRight,
     DodgeLeft,
-    Shoot
+    Shoot,
+    Gameover
 }
 
 public class AIwindowManager : MonoBehaviour
 {
+    [Header("AIのウィンドウ")]
+    [SerializeField] GameObject m_aiPanel = default;
     [Header("AIのテキストリスト")]
     [SerializeField] string[] m_textList = default;
     [Header("AIのイメージリスト")]
@@ -59,10 +62,13 @@ public class AIwindowManager : MonoBehaviour
     void Start()
     {
         ChangeAIByState(AIState.Default);
+        m_aiPanel.SetActive(false);
     }
 
     public void ChangeAIByState(AIState state)
     {
+        m_aiPanel.SetActive(true);
+
         if (aiCoroutine != null)
         {
             StopCoroutine(aiCoroutine);
@@ -122,6 +128,9 @@ public class AIwindowManager : MonoBehaviour
             case AIState.Shoot:
                 SoundManager.Instance.PlayVoiceByName("OpenFire2");
                 break;
+            case AIState.Gameover:
+                SoundManager.Instance.PlayVoiceByName("gameover");
+                break;
         }
     }
 
@@ -129,6 +138,7 @@ public class AIwindowManager : MonoBehaviour
     {
         yield return new WaitForSeconds(m_resetTime);
 
-        ChangeAIByState(AIState.Default);
+        //ChangeAIByState(AIState.Default);
+        m_aiPanel.SetActive(false);
     }
 }
