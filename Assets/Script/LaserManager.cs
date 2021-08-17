@@ -23,13 +23,12 @@ public class LaserManager : MonoBehaviour
         {
             m_laserGaugeAnim.enabled = true;
 
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W) && !isShooted)
             {
                 laser.ShotLaser(5.0f);
                 AIwindowManager.Instance.ChangeAIByState(AIState.Shoot);
                 SoundManager.Instance.PlaySeByName("beam_shoot_1");
                 isShooted = true;
-                GameManager.Instance.GetIsGaugeMaxed = false;
             }
         }
 
@@ -40,6 +39,7 @@ public class LaserManager : MonoBehaviour
         else if (GameManager.Instance.LaserGauge <= 0)
         {
             isShooted = false;
+            GameManager.Instance.GetIsGaugeMaxed = false;
             m_laserGaugeAnim.enabled = false;
         }
     }

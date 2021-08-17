@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -8,12 +9,18 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     [Header("空腹ゲージの最大値")]
     [SerializeField] int m_maxStomachGauge = 100;
+    [Header("空腹ゲージのイメージ")]
+    [SerializeField] Image m_stomachImage = default;
     [Header("空腹ゲージのスライダー")]
     [SerializeField] Slider m_stomachSlider = default;
     [Header("空腹ゲージの減少速度")]
-    [SerializeField] float m_decreaseSpeed = 0.01f;
+    [SerializeField] float m_decreaseSpeed = 1f;
+    [SerializeField] float m_decreaseValue = 1f;
+    float m_decreaseTimer = 0;
     [Header("レーザーゲージの最大値")]
     [SerializeField] int m_maxLaserGauge = 100;
+    [Header("レーザーゲージのスライダー")]
+    [SerializeField] Image m_laserImage = default;
     [Header("レーザーゲージのスライダー")]
     [SerializeField] Slider m_laserSlider = default;
     [Header("ゲームの状態")]
@@ -81,10 +88,14 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         m_restartButton.SetActive(false);
 
         m_currentStomachGauge = m_maxStomachGauge;
-        if (m_stomachSlider) m_stomachSlider.maxValue = m_maxStomachGauge;
+
+        if (m_stomachImage) m_stomachImage.fillAmount = (float)m_currentStomachGauge / m_maxStomachGauge;
+        if (m_stomachSlider && !m_stomachImage) { m_stomachSlider.maxValue = m_maxStomachGauge; }
         
         m_currentLaserGauge = 0;
-        if (m_laserSlider) m_laserSlider.maxValue = m_maxLaserGauge;
+
+        if (m_laserImage) m_laserImage.fillAmount = (float)m_currentLaserGauge / m_maxLaserGauge;
+        if (m_laserSlider && !m_laserImage) m_laserSlider.maxValue = m_maxLaserGauge;
 
         if (SceneManager.GetActiveScene().name == "Title")
         {
@@ -122,9 +133,18 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         if (InGame)
         {
-            m_currentStomachGauge -= Time.deltaTime * m_decreaseSpeed;
-            if (m_stomachSlider) m_stomachSlider.value = m_currentStomachGauge;
-            if (m_laserSlider) m_laserSlider.value = m_currentLaserGauge;
+            m_decreaseTimer += Time.deltaTime;
+            if (m_decreaseTimer >= m_decreaseSpeed)
+            {
+                m_currentStomachGauge -= m_decreaseValue;
+                EventManager.HPEvent(m_currentStomachGauge, m_maxStomachGauge);
+            }
+
+            if (m_stomachImage) m_stomachImage.fillAmount = (float)m_currentStomachGauge / m_maxStomachGauge;
+            if (m_stomachSlider && !m_stomachImage) m_stomachSlider.value = m_currentStomachGauge;
+
+            if (m_laserImage) m_laserImage.fillAmount = (float)m_currentLaserGauge / m_maxLaserGauge;
+            if (m_laserSlider && !m_laserImage) m_laserSlider.value = m_currentLaserGauge;
 
             if (m_currentLaserGauge >= m_maxLaserGauge && !isGaugeMaxed)
             {
@@ -211,15 +231,16 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
         if (!LaserManager.isShooted)
         {
-            m_currentLaserGauge += value;
-            m_currentStomachGauge += value;
+            m_currentLaserGauge += value / 5;
         }
-        
+
+        m_currentStomachGauge += value;
 
         if (m_currentStomachGauge >= 100)
         {
             m_currentStomachGauge = 100;
         }
+        EventManager.HPEvent(m_currentStomachGauge, m_maxStomachGauge);
     }
 
     /// <summary>
@@ -229,6 +250,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public void Damage(int value)
     {
         m_currentStomachGauge -= value;
+        EventManager.HPEvent(m_currentStomachGauge, m_maxStomachGauge);
     }
 
     public void AddGameSpeed(float value)
