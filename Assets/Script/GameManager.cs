@@ -198,6 +198,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         SoundManager.Instance.PlaySeByName("8_get_tresure");
         m_score += value;
         m_scoreText.text = "スコア : " + m_score.ToString();
+        EventManager.GetScore(value);
     }
 
     /// <summary>
