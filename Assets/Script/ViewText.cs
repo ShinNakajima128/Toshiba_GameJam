@@ -29,7 +29,14 @@ public class ViewText : MonoBehaviour
             m_timer = 0;
             return;
         }
-        m_text.text = text.ToString();
+        else if (text > 0)
+        {
+            m_text.text = "+" + text.ToString();
+        }
+        else
+        {
+            m_text.text = text.ToString();
+        }
     }
     public void SetText(int text,Color color)
     {
@@ -38,7 +45,24 @@ public class ViewText : MonoBehaviour
             m_timer = 0;
             return;
         }
-        m_text.text = text.ToString();
+        else if (text > 0)
+        {
+            m_text.text = "+" + text.ToString();
+        }
+        else
+        {
+            m_text.text = text.ToString();
+        }
+        m_text.color = color;
+    }
+    public void SetText(string text, Color color)
+    {
+        if (text == "0")
+        {
+            m_timer = 0;
+            return;
+        }
+        m_text.text = text;
         m_text.color = color;
     }
 }
