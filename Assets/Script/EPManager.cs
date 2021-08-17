@@ -7,11 +7,14 @@ public class EPManager : MonoBehaviour
 {
     [SerializeField] Image m_epGauge = default;
     [SerializeField] float m_speed = 5f;
+    [SerializeField] GameObject m_hyperObject;
     Color m_color;
     bool m_full = false;
     private void Start()
     {
         m_color = m_epGauge.color;
+        if(m_hyperObject)
+        m_hyperObject.SetActive(false);
     }
     private void OnEnable()
     {
@@ -39,7 +42,8 @@ public class EPManager : MonoBehaviour
     }
     IEnumerator FullGauge()
     {
-        Debug.Log("!");
+        if (m_hyperObject)
+            m_hyperObject.SetActive(true);
         bool up = true;
         float b = 0;
         while (m_full)
@@ -66,5 +70,7 @@ public class EPManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         m_epGauge.color = m_color;
+        if (m_hyperObject)
+            m_hyperObject.SetActive(false);
     }
 }
