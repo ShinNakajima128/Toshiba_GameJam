@@ -50,12 +50,12 @@ public class MeteorSwarmAlert : MonoBehaviour
         int type = Random.Range(0, 2);
         if (type == 0)
         {
-            SoundManager.Instance.PlayVoiceByName("Ex_2_1");
+            SoundManager.Instance.PlayVoiceByName("Ex_2_2");
             StartCoroutine(CountDown(m_leftAlertImage, type));
         }
         else
         {
-            SoundManager.Instance.PlayVoiceByName("Ex_2_2");
+            SoundManager.Instance.PlayVoiceByName("Ex_2_1");
             StartCoroutine(CountDown(m_rightAlertImage, type));
         }
     }

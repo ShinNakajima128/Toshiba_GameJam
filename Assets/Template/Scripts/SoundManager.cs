@@ -84,9 +84,9 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
             {
                 PlayBgmByName("キュートなマジック！_2");
             }
-            else if (SceneManager.GetActiveScene().name == "")
+            else if (SceneManager.GetActiveScene().name == "UITest")
             {
-                PlayBgmByName("");
+                PlayBgmByName("キュートなマジック！_2");
             }
         }  
     }

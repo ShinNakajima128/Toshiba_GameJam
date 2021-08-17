@@ -6,6 +6,8 @@ public class HitShot : MonoBehaviour
 {
     [Header("弾に耐えられる耐久度")]
     [SerializeField] int m_hp = 0;
+    [Header("破壊時のスコア")]
+    [SerializeField] int m_score = 5;
     [SerializeField] GameObject m_drop;
     int m_currentHp;
     private void Start()
@@ -20,6 +22,10 @@ public class HitShot : MonoBehaviour
             Destroy(other.gameObject);
             HitDamage(1);
         }
+        if (other.tag == "Laser")
+        {
+            HitDamage(999);
+        }
     }
     public void HitDamage(int damage)
     {
@@ -27,6 +33,7 @@ public class HitShot : MonoBehaviour
         if (m_currentHp <= 0)
         {
             EffectManager.Instance.PlayEffect(EffectType.Explosion, this.transform.position);
+            GameManager.Instance.AddScore(m_score);
             if (m_drop)
             {
                 Instantiate(m_drop).transform.position = this.transform.position;

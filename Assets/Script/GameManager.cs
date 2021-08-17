@@ -7,11 +7,15 @@ using UnityEngine.SceneManagement;
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     [Header("空腹ゲージの最大値")]
-    [SerializeField] int m_stomachGauge = 100;
+    [SerializeField] int m_maxStomachGauge = 100;
     [Header("空腹ゲージのスライダー")]
     [SerializeField] Slider m_stomachSlider = default;
     [Header("空腹ゲージの減少速度")]
     [SerializeField] float m_decreaseSpeed = 0.01f;
+    [Header("レーザーゲージの最大値")]
+    [SerializeField] int m_maxLaserGauge = 100;
+    [Header("レーザーゲージのスライダー")]
+    [SerializeField] Slider m_laserSlider = default;
     [Header("ゲームの状態")]
     [SerializeField] bool InGame = false;
     [Header("スコアを表示するテキスト")]
@@ -24,9 +28,12 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     float m_currentDashSpeed = 1f;
     [Header("デバッグ用のリスタートボタン")]
     [SerializeField] GameObject m_restartButton = default;
-    float stomachGauge = default;
-    int m_score = default;
+    float m_currentStomachGauge = default;
+    float m_currentLaserGauge = 0;
+    static int m_score = default;
     [SerializeField] GameObject m_dashEffect;
+    bool isGaugeMaxed = false;
+    float m_timer = 0;
 
     public int GetScore { get => m_score; }
 
@@ -35,6 +42,12 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public float DashSpeed { get => m_currentDashSpeed * GameSpeed; }
 
     public bool GetInGame { get => InGame; }
+
+    public float LaserGauge { get => m_currentLaserGauge; set { m_currentLaserGauge = value; } } 
+
+    public bool GetIsGaugeMaxed { get => isGaugeMaxed; set { isGaugeMaxed = value; } }
+
+    public int GetLaserMaxGauge { get => m_maxLaserGauge; }
 
     private void Awake()
     {
@@ -51,16 +64,20 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         m_restartButton.SetActive(false);
-        stomachGauge = m_stomachGauge;
-        InGame = true;
+
+        m_currentStomachGauge = m_maxStomachGauge;
+        if (m_stomachSlider) m_stomachSlider.maxValue = m_maxStomachGauge;
+        
+        m_currentLaserGauge = 0;
+        if (m_laserSlider) m_laserSlider.maxValue = m_maxLaserGauge;
 
         if (SceneManager.GetActiveScene().name == "Title")
         {
-
+            SoundManager.Instance.PlayVoiceByName("result");
         }
-        else if (SceneManager.GetActiveScene().name == "GameSCene")
+        else if (SceneManager.GetActiveScene().name == "Takeuchi")
         {
-
+            Restart();
         }
         else if (SceneManager.GetActiveScene().name == "Result")
         {
@@ -77,7 +94,11 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         switch (SceneManager.GetActiveScene().name)
         {
-            case "GameScene":
+            case "Ryu":
+                SoundManager.Instance.StopVoice();
+                SoundManager.Instance.PlayVoiceByName("result");
+                break;
+            default:
                 m_score = 0;
                 break;
         }
@@ -86,18 +107,36 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         if (InGame)
         {
-            stomachGauge -= Time.deltaTime * m_decreaseSpeed;
-            if (m_stomachSlider) m_stomachSlider.value = stomachGauge;
-            if (stomachGauge <= 0)
+            m_currentStomachGauge -= Time.deltaTime * m_decreaseSpeed;
+            if (m_stomachSlider) m_stomachSlider.value = m_currentStomachGauge;
+            if (m_laserSlider) m_laserSlider.value = m_currentLaserGauge;
+
+            if (m_currentLaserGauge >= m_maxLaserGauge && !isGaugeMaxed)
+            {
+                Debug.Log("レーザー発射可能");
+                isGaugeMaxed = true;
+                m_currentLaserGauge = m_maxLaserGauge;
+            }
+
+            m_timer += Time.deltaTime;
+
+            if (m_timer >= 2 && !LaserManager.isShooted && !isGaugeMaxed)
+            {
+                m_timer = 0;
+                m_currentLaserGauge += 50;
+                Debug.Log(m_currentLaserGauge);
+            }
+
+            if (m_currentStomachGauge <= 0)
             {
                 InGame = false;
                 //m_restartButton.SetActive(true);
-                EventManager.GameEnd(); 
+                Debug.Log("ゲーム終了");
+                LoadSceneManager.Instance.LoadResultScene();
+                SoundManager.Instance.PlayVoiceByName("gameover");
                 if (m_dashEffect)
                     m_dashEffect.SetActive(false);
-                Debug.Log("ゲーム終了");
-                SoundManager.Instance.PlayVoiceByName("gameover");
-                LoadSceneManager.Instance.LoadResultScene();
+                EventManager.GameEnd();
                 return;
             }
             if (Input.GetButton("Dash"))
@@ -131,9 +170,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public void Restart()
     {
         InGame = true;
-        stomachGauge = m_stomachGauge;
+        m_currentStomachGauge = m_maxStomachGauge;
         EventManager.GameStart();
-        m_restartButton.SetActive(false);
+        //m_restartButton.SetActive(false);
     }
 
     /// <summary>
@@ -154,11 +193,11 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public void Recovery(int value)
     {
         SoundManager.Instance.PlayVoiceByName("3-1");
-        stomachGauge += value;
+        m_currentStomachGauge += value;
 
-        if (stomachGauge >= 100)
+        if (m_currentStomachGauge >= 100)
         {
-            stomachGauge = 100;
+            m_currentStomachGauge = 100;
         }
     }
 
@@ -168,7 +207,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     /// <param name="value"> ダメージ量 </param>
     public void Damage(int value)
     {
-        stomachGauge -= value;
+        m_currentStomachGauge -= value;
     }
 
     public void AddGameSpeed(float value)

@@ -674,6 +674,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Star (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4654897299277425634, guid: 370955e6961aee141adcbfa8e27d8e2e,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4068373912626513877, guid: f7974a95bc1bc264996ef08559d4d0ad,
+        type: 3}
+    - target: {fileID: 8358564969478710059, guid: 370955e6961aee141adcbfa8e27d8e2e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358564969478710059, guid: 370955e6961aee141adcbfa8e27d8e2e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358564969478710059, guid: 370955e6961aee141adcbfa8e27d8e2e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 370955e6961aee141adcbfa8e27d8e2e, type: 3}
 --- !u!4 &8609659574347193892 stripped
