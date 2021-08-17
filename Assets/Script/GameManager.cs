@@ -138,6 +138,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             {
                 m_currentStomachGauge -= m_decreaseValue;
                 EventManager.HPEvent(m_currentStomachGauge, m_maxStomachGauge);
+                m_decreaseTimer = 0;
             }
 
             if (m_stomachImage) m_stomachImage.fillAmount = (float)m_currentStomachGauge / m_maxStomachGauge;
@@ -153,6 +154,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
                 SoundManager.Instance.PlaySeByName("4_charge");
                 isGaugeMaxed = true;
                 m_currentLaserGauge = m_maxLaserGauge;
+                EventManager.EPEvent(m_currentLaserGauge, m_maxLaserGauge);
             }
 
             if (m_currentStomachGauge <= 40 && !isStateChanged)
@@ -232,6 +234,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         if (!LaserManager.isShooted)
         {
             m_currentLaserGauge += value / 5;
+            EventManager.EPEvent(m_currentLaserGauge, m_maxLaserGauge);
         }
 
         m_currentStomachGauge += value;
