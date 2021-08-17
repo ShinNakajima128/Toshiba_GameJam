@@ -25,6 +25,7 @@ public class LaserManager : MonoBehaviour
             {
                 Debug.Log("レーザー発射");
                 isShooted = true;
+                GameManager.Instance.GetIsGaugeMaxed = false;
             }
         }
 

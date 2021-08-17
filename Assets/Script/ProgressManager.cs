@@ -68,6 +68,10 @@ public class ProgressManager : MonoBehaviour
         if (m_currentState != difficultyState)
         {
             Debug.Log(m_currentState);
+            if (difficultyState != DifficultyState.None && difficultyState != DifficultyState.Easy) 
+            { 
+                AIwindowManager.Instance.ChangeAIByState(AIState.DifUpdate); 
+            }
 
             switch (difficultyState)
             {
@@ -75,22 +79,18 @@ public class ProgressManager : MonoBehaviour
                     m_difficulty.text = "<color=#4FFFC5>EASY</color>";
                     break;
                 case DifficultyState.Normal:
-                    SoundManager.Instance.PlayVoiceByName("denger_up");
                     m_difficulty.text = "<color=#EDFF7C>NORMAL</color>";
                     GameManager.Instance.AddGameSpeed(0.5f);
                     break;
                 case DifficultyState.Hard:
-                    SoundManager.Instance.PlayVoiceByName("denger_up");
                     m_difficulty.text = "<color=#F1B343>HARD</color>";
                     GameManager.Instance.AddGameSpeed(1f);
                     break;
                 case DifficultyState.VeryHard:
-                    SoundManager.Instance.PlayVoiceByName("denger_up");
                     m_difficulty.text = "<color=#F15A44>VERYHARD</color>";
                     GameManager.Instance.AddGameSpeed(1.5f);
                     break;
                 case DifficultyState.Pirate:
-                    SoundManager.Instance.PlayVoiceByName("denger_up");
                     m_difficulty.text = "PIRATES";
                     GameManager.Instance.AddGameSpeed(2f);
                     break;

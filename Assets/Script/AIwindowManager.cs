@@ -11,7 +11,9 @@ public enum AIState
     Smale,
     Sad,
     Angry,
-    Impatience
+    Impatience,
+    DifUpdate,
+    GaugeMax
 }
 
 public class AIwindowManager : MonoBehaviour
@@ -31,9 +33,13 @@ public class AIwindowManager : MonoBehaviour
 
     Coroutine aiCoroutine = default;
 
+    public static AIwindowManager Instance;
+
 
     private void Awake()
     {
+        Instance = this;
+
         for (int i = 0; i < m_spriteList.Length; i++)
         {
             AIState State = (AIState)(i);
@@ -129,6 +135,12 @@ public class AIwindowManager : MonoBehaviour
                 break;
             case AIState.Impatience:
                 SoundManager.Instance.PlayVoiceByName("3-4");
+                break;
+            case AIState.DifUpdate:
+                SoundManager.Instance.PlayVoiceByName("denger_up");
+                break;
+            case AIState.GaugeMax:
+                SoundManager.Instance.PlayVoiceByName("");
                 break;
         }
     }

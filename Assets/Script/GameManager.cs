@@ -45,7 +45,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     public float LaserGauge { get => m_currentLaserGauge; set { m_currentLaserGauge = value; } } 
 
-    public bool GetIsGaugeMaxed { get => isGaugeMaxed; }
+    public bool GetIsGaugeMaxed { get => isGaugeMaxed; set { isGaugeMaxed = value; } }
+
     public int GetLaserMaxGauge { get => m_maxLaserGauge; }
 
     private void Awake()
@@ -119,11 +120,11 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
             m_timer += Time.deltaTime;
 
-            if (m_timer >= 2 && !LaserManager.isShooted)
+            if (m_timer >= 2 && !LaserManager.isShooted && !isGaugeMaxed)
             {
-                Debug.Log(m_currentLaserGauge);
                 m_timer = 0;
                 m_currentLaserGauge += 50;
+                Debug.Log(m_currentLaserGauge);
             }
 
             if (m_currentStomachGauge <= 0)

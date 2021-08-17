@@ -10606,7 +10606,7 @@ PrefabInstance:
     - target: {fileID: 7150421856423063892, guid: 0f30bf0cb890ab848bf8684d1807e717,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7150421856423063892, guid: 0f30bf0cb890ab848bf8684d1807e717,
         type: 3}
@@ -15822,7 +15822,7 @@ PrefabInstance:
     - target: {fileID: 1275753938073908403, guid: 813b311b5c672b14e9b659a367a0432b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1275753938073908429, guid: 813b311b5c672b14e9b659a367a0432b,
         type: 3}
@@ -16217,7 +16217,7 @@ PrefabInstance:
     - target: {fileID: 6104174016525285438, guid: a2e1f1413c242994297428e35632a62a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6104174016525285438, guid: a2e1f1413c242994297428e35632a62a,
         type: 3}
@@ -16238,6 +16238,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_diminishGaugeTime
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104174016985831233, guid: a2e1f1413c242994297428e35632a62a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104174016985831233, guid: a2e1f1413c242994297428e35632a62a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9403666
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104174016985831233, guid: a2e1f1413c242994297428e35632a62a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.08018869
       objectReference: {fileID: 0}
     - target: {fileID: 6104174016985831238, guid: a2e1f1413c242994297428e35632a62a,
         type: 3}
