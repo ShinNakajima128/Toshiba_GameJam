@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LaserManager : MonoBehaviour
 {
+    [Header("レーザーのプレハブ")]
+    [SerializeField] LaserControl laser = default;
     [Header("レーザーゲージのアニメーター")]
     [SerializeField] Animator m_laserGaugeAnim = default;
     [SerializeField] float m_diminishGaugeTime = 5;
@@ -23,7 +25,9 @@ public class LaserManager : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.W))
             {
-                Debug.Log("レーザー発射");
+                laser.ShotLaser(5.0f);
+                AIwindowManager.Instance.ChangeAIByState(AIState.Shoot);
+                SoundManager.Instance.PlaySeByName("beam_shoot_1");
                 isShooted = true;
                 GameManager.Instance.GetIsGaugeMaxed = false;
             }
@@ -32,7 +36,6 @@ public class LaserManager : MonoBehaviour
         if (isShooted && GameManager.Instance.LaserGauge > 0)
         {
             GameManager.Instance.LaserGauge -= Time.deltaTime * (GameManager.Instance.GetLaserMaxGauge /m_diminishGaugeTime);
-            Debug.Log(GameManager.Instance.LaserGauge);
         }
         else if (GameManager.Instance.LaserGauge <= 0)
         {

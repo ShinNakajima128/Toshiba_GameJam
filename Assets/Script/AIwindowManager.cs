@@ -9,11 +9,14 @@ public enum AIState
     Damage,
     Eat,
     Smale,
-    Sad,
+    Diminish,
     Angry,
     Impatience,
     DifUpdate,
-    GaugeMax
+    GaugeMax,
+    DodgeRight,
+    DodgeLeft,
+    Shoot
 }
 
 public class AIwindowManager : MonoBehaviour
@@ -58,38 +61,6 @@ public class AIwindowManager : MonoBehaviour
         ChangeAIByState(AIState.Default);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            ChangeAIByState(AIState.Damage);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ChangeAIByState(AIState.Eat);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            ChangeAIByState(AIState.Smale);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            ChangeAIByState(AIState.Sad);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            ChangeAIByState(AIState.Angry);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            ChangeAIByState(AIState.Impatience);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            ChangeAIByState(AIState.Default);
-        }
-    }
-
     public void ChangeAIByState(AIState state)
     {
         if (aiCoroutine != null)
@@ -130,7 +101,7 @@ public class AIwindowManager : MonoBehaviour
             case AIState.Angry:
                 SoundManager.Instance.PlayVoiceByName("2-1");
                 break;
-            case AIState.Sad:
+            case AIState.Diminish:
                 SoundManager.Instance.PlayVoiceByName("2-4");
                 break;
             case AIState.Impatience:
@@ -140,6 +111,15 @@ public class AIwindowManager : MonoBehaviour
                 SoundManager.Instance.PlayVoiceByName("denger_up");
                 break;
             case AIState.GaugeMax:
+                SoundManager.Instance.PlayVoiceByName("Charge");
+                break;
+            case AIState.DodgeRight:
+                SoundManager.Instance.PlayVoiceByName("Ex_2_2");
+                break;
+            case AIState.DodgeLeft:
+                SoundManager.Instance.PlayVoiceByName("Ex_2_1");
+                break;
+            case AIState.Shoot:
                 SoundManager.Instance.PlayVoiceByName("");
                 break;
         }

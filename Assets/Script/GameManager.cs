@@ -25,6 +25,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     float m_currentGameSpeed = 1f;
     [Header("ダッシュ時のスピード")]
     [SerializeField] float m_dashSpeed = 1.0f;
+    [Header("ゲージの状況を知らせるアナウンスの間隔")]
+    [SerializeField] float m_announceInterval = 10.0f;
     float m_currentDashSpeed = 1f;
     [Header("デバッグ用のリスタートボタン")]
     [SerializeField] GameObject m_restartButton = default;
@@ -33,6 +35,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     static int m_score = default;
     [SerializeField] GameObject m_dashEffect;
     bool isGaugeMaxed = false;
+    bool isStateChanged = false;
     float m_timer = 0;
 
     public int GetScore { get => m_score; }
@@ -43,7 +46,19 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     public bool GetInGame { get => InGame; }
 
-    public float LaserGauge { get => m_currentLaserGauge; set { m_currentLaserGauge = value; } } 
+    public float LaserGauge 
+    { 
+        get => m_currentLaserGauge; 
+        set 
+        { 
+            m_currentLaserGauge = value; 
+
+            if (m_currentLaserGauge >= m_maxLaserGauge)
+            {
+                m_currentLaserGauge = m_maxLaserGauge;
+            }
+        } 
+    } 
 
     public bool GetIsGaugeMaxed { get => isGaugeMaxed; set { isGaugeMaxed = value; } }
 
@@ -114,23 +129,22 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             if (m_currentLaserGauge >= m_maxLaserGauge && !isGaugeMaxed)
             {
                 Debug.Log("レーザー発射可能");
+                AIwindowManager.Instance.ChangeAIByState(AIState.GaugeMax);
+                SoundManager.Instance.PlaySeByName("4_charge");
                 isGaugeMaxed = true;
                 m_currentLaserGauge = m_maxLaserGauge;
             }
 
-            m_timer += Time.deltaTime;
-
-            if (m_timer >= 2 && !LaserManager.isShooted && !isGaugeMaxed)
+            if (m_currentStomachGauge <= 40 && !isStateChanged)
             {
-                m_timer = 0;
-                m_currentLaserGauge += 50;
-                Debug.Log(m_currentLaserGauge);
+                isStateChanged = true;
+                AIwindowManager.Instance.ChangeAIByState(AIState.Diminish);
+                StartCoroutine(WaitFlagReturn());
             }
 
             if (m_currentStomachGauge <= 0)
             {
                 InGame = false;
-                //m_restartButton.SetActive(true);
                 Debug.Log("ゲーム終了");
                 LoadSceneManager.Instance.LoadResultScene();
                 SoundManager.Instance.PlayVoiceByName("gameover");
@@ -193,7 +207,13 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public void Recovery(int value)
     {
         SoundManager.Instance.PlayVoiceByName("3-1");
-        m_currentStomachGauge += value;
+
+        if (!LaserManager.isShooted)
+        {
+            m_currentLaserGauge += value;
+            m_currentStomachGauge += value;
+        }
+        
 
         if (m_currentStomachGauge >= 100)
         {
@@ -213,5 +233,18 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public void AddGameSpeed(float value)
     {
         m_currentGameSpeed += value;
+    }
+
+    public void DebugGaugeMax()
+    {
+        Debug.Log("debug");
+        m_currentLaserGauge += m_maxLaserGauge + 10;
+    }
+
+    IEnumerator WaitFlagReturn()
+    {
+        yield return new WaitForSeconds(m_announceInterval);
+
+        isStateChanged = false;
     }
 }

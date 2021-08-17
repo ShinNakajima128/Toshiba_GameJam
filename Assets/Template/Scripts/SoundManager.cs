@@ -88,6 +88,11 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
             {
                 PlayBgmByName("キュートなマジック！_2");
             }
+            else if (SceneManager.GetActiveScene().name == "Ryu")
+            {
+                SoundManager.Instance.StopSe();
+                PlaySeByName("gameover");
+            }
         }  
     }
 
@@ -111,12 +116,12 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
                 case "Takeuchi":
                     PlayBgmByName("キュートなマジック！_2");
                     break;
-                    //case "":
-                    //    PlayBgmByName("");
-                    //    break;
-                    //case "":
-                    //    PlayBgmByName("");
-                    //    break;
+                case "UITest":
+                    PlayBgmByName("キュートなマジック！_2");
+                    break;
+                case "Ryu":
+                    PlaySeByName("gameover");
+                    break;
             }
         } 
     }

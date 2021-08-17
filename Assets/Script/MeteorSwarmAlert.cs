@@ -48,14 +48,17 @@ public class MeteorSwarmAlert : MonoBehaviour
     public void StartMeteorSwarmAlert()
     {
         int type = Random.Range(0, 2);
+
         if (type == 0)
         {
-            SoundManager.Instance.PlayVoiceByName("Ex_2_2");
+            //右に回避
+            AIwindowManager.Instance.ChangeAIByState(AIState.DodgeRight);
             StartCoroutine(CountDown(m_leftAlertImage, type));
         }
         else
         {
-            SoundManager.Instance.PlayVoiceByName("Ex_2_1");
+            //左に回避
+            AIwindowManager.Instance.ChangeAIByState(AIState.DodgeLeft);
             StartCoroutine(CountDown(m_rightAlertImage, type));
         }
     }

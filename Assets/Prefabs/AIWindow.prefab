@@ -146,8 +146,11 @@ MonoBehaviour:
   - "\u98DF\u6599\u304C\u8DB3\u308A\u306A\u3044\u3088\u30FC\uFF01"
   - "\u3088\u3051\u3066\uFF01"
   - "\u3075\u3045\u3001\u5371\u306A\u304B\u3063\u305F\u306D"
-  - "\u96E3\u6613\u5EA6\u304C\u4E0A\u304C\u3063\u305F\u3088\uFF01"
-  - "\u5145\u586B\u5B8C\u4E86\uFF01"
+  - "\u5371\u967A\u5EA6\u304C\u4E0A\u304C\u3063\u305F\u3088\uFF01"
+  - "<size=25>\u5145\u586B\u5B8C\u4E86\uFF01\u3044\u3064\u3067\u3082\u6483\u3066\u308B\u3088\uFF01</size>"
+  - "\u53F3\u306B\u3088\u3051\u3066\uFF01"
+  - "\u5DE6\u306B\u3088\u3051\u3066\uFF01"
+  - "\u30EC\u30FC\u30B6\u30FC\u767A\u5C04\uFF01\uFF08\u4EEE\uFF09"
   m_spriteList:
   - {fileID: 21300000, guid: 11f3d23290d3e024aa3f48a1897b1660, type: 3}
   - {fileID: 21300000, guid: a0c137b92f8dcf748b20af4041fc218e, type: 3}
@@ -158,6 +161,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7556c8d526da6154894b082e5917c670, type: 3}
   - {fileID: 21300000, guid: 11f3d23290d3e024aa3f48a1897b1660, type: 3}
   - {fileID: 21300000, guid: 668d46c0d5c33e949bd31b0b54fbad5f, type: 3}
+  - {fileID: 21300000, guid: 5fd3fed556506ba4abee535797a02ce3, type: 3}
+  - {fileID: 21300000, guid: 5fd3fed556506ba4abee535797a02ce3, type: 3}
+  - {fileID: 21300000, guid: 2b9e84dd363da434d97a5f4fdce4e0cb, type: 3}
   m_aiText: {fileID: 2521823926764935907}
   m_aiImage: {fileID: 2521823927405092788}
   m_resetTime: 3
