@@ -5053,7 +5053,6 @@ GameObject:
   - component: {fileID: 4999231572767271536}
   - component: {fileID: 4999231572767271537}
   - component: {fileID: 4999231572767271547}
-  - component: {fileID: 4931909256026272267}
   - component: {fileID: 7788601766666690146}
   m_Layer: 0
   m_Name: TreasureboxItem
@@ -5179,20 +5178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc34d1bbf31d4c144bca86ed318b0934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4931909256026272267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4999231572767271538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100af7e408600274a9363c63ea6bf78e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_hp: 3
-  m_drop: {fileID: 0}
 --- !u!65 &7788601766666690146
 BoxCollider:
   m_ObjectHideFlags: 0
