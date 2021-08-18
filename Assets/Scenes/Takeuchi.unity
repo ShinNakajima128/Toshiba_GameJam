@@ -16015,6 +16015,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 710892407, guid: 813b311b5c672b14e9b659a367a0432b, type: 3}
+      propertyPath: m_spawnObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 5781650189988123569, guid: eef41aa53fe38b7489abf7846b8d0c26,
+        type: 3}
+    - target: {fileID: 710892407, guid: 813b311b5c672b14e9b659a367a0432b, type: 3}
+      propertyPath: m_spawnObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 6607145368568422493, guid: 65e67c3a2ad51bb4bb8825eaea08fb4a,
+        type: 3}
     - target: {fileID: 1275753938073908403, guid: 813b311b5c672b14e9b659a367a0432b,
         type: 3}
       propertyPath: m_Name
