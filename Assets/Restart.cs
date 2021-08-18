@@ -6,10 +6,19 @@ public class Restart : MonoBehaviour
 {
     public void OnClickRestart()
     {
-        LoadSceneManager.Instance.LoadGameScene();
+        AIwindowManager.Instance.ChangeAIByState(AIState.Retry);
+        StartCoroutine(OnRestart());
     }
+
     public void OnClickTitle()
     {
         LoadSceneManager.Instance.LoadTitleScene();
+    }
+
+    IEnumerator OnRestart()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        LoadSceneManager.Instance.LoadGameScene();
     }
 }

@@ -30,12 +30,13 @@ public class ProgressManager : MonoBehaviour
     float g = 0.0f;
     float b = 0.0f;
 
+    public static DifficultyState finalStatus;
+
     private void Start()
     {
         m_textAnim.enabled = false;
         m_currentState = DifficultyState.None;
         difficultyState = DifficultyState.Easy;
-        
     }
 
     void Update()
@@ -47,6 +48,7 @@ public class ProgressManager : MonoBehaviour
 
             if (progressValue >= 0 && progressValue < m_easyToNormal)
             {
+                finalStatus = DifficultyState.Easy;
                 difficultyState = DifficultyState.Easy;
             }
             else if (progressValue >= m_easyToNormal && progressValue < m_normalToHard)
@@ -67,6 +69,10 @@ public class ProgressManager : MonoBehaviour
                 m_textAnim.enabled = true;
                 isMaxed = true;
             }
+        }
+        else if (!GameManager.Instance.GetInGame)
+        {
+            finalStatus = difficultyState;
         }
 
         if (m_currentState != difficultyState)

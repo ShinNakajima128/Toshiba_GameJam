@@ -23,8 +23,8 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         m_score.text = GameManager.Instance.GetScore.ToString();
-        m_difficultyCopy = ProgressManager.Instance.GetDifficulty.ToString();
-        m_difficulty.text = m_difficultyCopy;
+        m_difficultyCopy = ProgressManager.finalStatus.ToString();
+        m_difficulty.text = DifColorChange(m_difficultyCopy);
         m_scoreCopy = GameManager.Instance.GetScore;
         m_result = Calculate(m_difficultyCopy);
         m_resultScore.text = m_result.ToString();
@@ -59,10 +59,31 @@ public class ScoreManager : MonoBehaviour
         return result;
     } 
 
-
-    // Update is called once per frame
-    void Update()
+    string DifColorChange(string dif)
     {
-        
+        string text = default;
+
+        switch (dif)
+        {
+            case "Easy":
+                text = "<color=#4FFFC5>EASY × 1</color>";
+                break;
+            case "Normal":
+                text = "<color=#EDFF7C>NORMAL × 1.25</color>";
+                break;
+            case "Hard":
+                text = "<color=#F1B343>HARD × 1.5</color>";
+                break;
+            case "VeryHard":
+                text = "<color=#F15A44>VERYHARD × 1.75</color>";
+                break;
+            case "Pirate":
+                text = "PIRATES × 2";
+                break;
+            default:
+                break;
+        }
+
+        return text;
     }
 }

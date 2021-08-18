@@ -106,9 +106,10 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         {
             Restart();
         }
-        else if (SceneManager.GetActiveScene().name == "Result")
+        else if (SceneManager.GetActiveScene().name == "Ryu")
         {
-
+            //SoundManager.Instance.StopVoice();
+            AIwindowManager.Instance.ChangeAIByState(AIState.Result);
         }
     }
 
@@ -123,7 +124,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         {
             case "Ryu":
                 SoundManager.Instance.StopVoice();
-                SoundManager.Instance.PlayVoiceByName("result");
+                AIwindowManager.Instance.ChangeAIByState(AIState.Result);
                 break;
             default:
                 m_score = 0;

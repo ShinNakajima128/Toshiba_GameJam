@@ -13,6 +13,8 @@ public enum TitleState
 
 public class TitleManager : MonoBehaviour
 {
+    [Header("タイトルロゴ")]
+    [SerializeField] GameObject m_titleLogo = default;
     [Header("スタート画面")]
     [SerializeField] GameObject m_start = default;
     [Header("メイン選択画面")]
@@ -132,6 +134,7 @@ public class TitleManager : MonoBehaviour
         if (titleType == 1) SoundManager.Instance.PlaySeByName("5_1_select");
         m_titleState = TitleState.Help;
         if (m_main.activeSelf) m_main.SetActive(false);
+        if (m_titleLogo) m_titleLogo.SetActive(false);
         m_help.SetActive(true);
         titleType = 2;
     }

@@ -16099,7 +16099,7 @@ PrefabInstance:
     - target: {fileID: 1521203960792730293, guid: 265be291f8d8a2f4197c4f9ec3c050a0,
         type: 3}
       propertyPath: m_announceInterval
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1521203960792730293, guid: 265be291f8d8a2f4197c4f9ec3c050a0,
         type: 3}
@@ -16420,6 +16420,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2521823926764935907, guid: de781dc2cd7a4f5459d41234da9c0592,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2521823926860401688, guid: de781dc2cd7a4f5459d41234da9c0592,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16489,6 +16494,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521823926860401689, guid: de781dc2cd7a4f5459d41234da9c0592,
+        type: 3}
+      propertyPath: m_resetTime
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2521823926860401695, guid: de781dc2cd7a4f5459d41234da9c0592,
         type: 3}
@@ -16564,6 +16574,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RenderMode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521823928573576198, guid: de781dc2cd7a4f5459d41234da9c0592,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.9019608
       objectReference: {fileID: 0}
     - target: {fileID: 7800363371684353126, guid: de781dc2cd7a4f5459d41234da9c0592,
         type: 3}

@@ -17,7 +17,9 @@ public enum AIState
     DodgeRight,
     DodgeLeft,
     Shoot,
-    Gameover
+    Gameover,
+    Result,
+    Retry
 }
 
 public class AIwindowManager : MonoBehaviour
@@ -57,13 +59,11 @@ public class AIwindowManager : MonoBehaviour
             AIState State = (AIState)(i);
             m_textDic.Add(State, m_textList[i]);
         }
-    }
 
-    void Start()
-    {
         ChangeAIByState(AIState.Default);
         m_aiPanel.SetActive(false);
     }
+
 
     public void ChangeAIByState(AIState state)
     {
@@ -130,6 +130,13 @@ public class AIwindowManager : MonoBehaviour
                 break;
             case AIState.Gameover:
                 SoundManager.Instance.PlayVoiceByName("gameover");
+                break;
+            case AIState.Result:
+                SoundManager.Instance.PlayVoiceByName("result");
+                break;
+            case AIState.Retry:
+                SoundManager.Instance.PlayVoiceByName("start");
+
                 break;
         }
     }

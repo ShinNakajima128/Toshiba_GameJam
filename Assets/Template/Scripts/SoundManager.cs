@@ -104,8 +104,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
             }
             else if (SceneManager.GetActiveScene().name == "Ryu")
             {
-                SoundManager.Instance.StopSe();
-                PlaySeByName("gameover");
+                PlayBgmByName("心の中の小さな宇宙_2");
             }
         }  
     }

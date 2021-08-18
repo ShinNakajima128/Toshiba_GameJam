@@ -25,10 +25,16 @@ public class ResultManager : MonoBehaviour
     {
         yield return new WaitForSeconds(m_timer);
         m_calc.enabled = true;
+        SoundManager.Instance.PlaySeByName("ScoreView");
+
         yield return new WaitForSeconds(m_timer);
         m_difficulty.enabled = true;
+        SoundManager.Instance.PlaySeByName("ScoreView");
+
         yield return new WaitForSeconds(m_timer);
         m_resultText.enabled = true;
+        SoundManager.Instance.PlaySeByName("ResultScore");
+
         yield return new WaitForSeconds(m_timer);
         m_selectPanel.SetActive(true);
     }
