@@ -5115,7 +5115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hp: 3
   m_score: 15
-  m_drop: {fileID: 4999231572767271538, guid: 52fec2760f2208f449b58fe0d031fd62, type: 3}
+  m_drop: {fileID: 0}
 --- !u!65 &6909936175374103450
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5292,17 +5292,17 @@ PrefabInstance:
     - target: {fileID: 4795608859515906451, guid: a86422c442f20fd45995599d07f9b600,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4795608859515906451, guid: a86422c442f20fd45995599d07f9b600,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4795608859515906451, guid: a86422c442f20fd45995599d07f9b600,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a86422c442f20fd45995599d07f9b600, type: 3}

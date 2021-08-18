@@ -5115,7 +5115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hp: 7
   m_score: 80
-  m_drop: {fileID: 4999231572767271538, guid: 52fec2760f2208f449b58fe0d031fd62, type: 3}
+  m_drop: {fileID: 4480094684064736814, guid: 522fd354040c4d64d93e9de332d58957, type: 3}
 --- !u!65 &5489821798319215058
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5292,12 +5292,12 @@ PrefabInstance:
     - target: {fileID: 4795608859515906451, guid: a86422c442f20fd45995599d07f9b600,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4795608859515906451, guid: a86422c442f20fd45995599d07f9b600,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4795608859515906451, guid: a86422c442f20fd45995599d07f9b600,
         type: 3}
