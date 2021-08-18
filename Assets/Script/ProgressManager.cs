@@ -81,22 +81,22 @@ public class ProgressManager : MonoBehaviour
                 case DifficultyState.Normal:
                     m_difficulty.text = "<color=#EDFF7C>NORMAL</color>";
                     GameManager.Instance.AddGameSpeed(0.5f);
-                    EventManager.DifChangeEvent(1.2f);
+                    EventManager.DifChangeEvent(1.1f);
                     break;
                 case DifficultyState.Hard:
                     m_difficulty.text = "<color=#F1B343>HARD</color>";
                     GameManager.Instance.AddGameSpeed(1f);
-                    EventManager.DifChangeEvent(1.4f);
+                    EventManager.DifChangeEvent(1.2f);
                     break;
                 case DifficultyState.VeryHard:
                     m_difficulty.text = "<color=#F15A44>VERYHARD</color>";
                     GameManager.Instance.AddGameSpeed(1.5f);
-                    EventManager.DifChangeEvent(1.6f);
+                    EventManager.DifChangeEvent(1.3f);
                     break;
                 case DifficultyState.Pirate:
                     m_difficulty.text = "PIRATES";
                     GameManager.Instance.AddGameSpeed(2f);
-                    EventManager.DifChangeEvent(2.0f);
+                    EventManager.DifChangeEvent(1.5f);
                     break;
             }
             m_currentState = difficultyState;

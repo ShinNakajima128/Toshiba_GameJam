@@ -36,6 +36,11 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     Dictionary<string, int> voiceIndex = new Dictionary<string, int>();
     public static bool isLosted = false;
 
+    public float GetMasterVolume { get => m_masterVolume; }
+    public float GetBgmVolume { get => m_bgmVolume; }
+    public float GetSeVolume { get => m_seVolume; }
+    public float GetVoiceVolume { get => m_voiceVolume; }
+
     /// <summary> マスター音量時のフラグ </summary>
     bool masterVolumeChange = false;
     /// <summary> BGM音量時のフラグ </summary>

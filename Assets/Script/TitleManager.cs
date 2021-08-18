@@ -43,6 +43,28 @@ public class TitleManager : MonoBehaviour
         m_bgmSlider = GameObject.FindGameObjectWithTag("BGM").GetComponent<Slider>();
         m_seSlider = GameObject.FindGameObjectWithTag("SE").GetComponent<Slider>();
         m_voiceSlider = GameObject.FindGameObjectWithTag("VOICE").GetComponent<Slider>();
+
+        if (m_masterSlider)
+        {
+            m_masterSlider.value = SoundManager.Instance.GetMasterVolume;
+            Debug.Log("マスター音量：" + m_masterSlider.value);
+        }
+        if (m_bgmSlider)
+        {
+            m_bgmSlider.value = SoundManager.Instance.GetBgmVolume;
+            Debug.Log("BGM音量：" + m_bgmSlider.value);
+        }
+        if (m_seSlider)
+        {
+            m_seSlider.value = SoundManager.Instance.GetSeVolume;
+            Debug.Log("SE音量：" + m_seSlider.value);
+        }
+        if (m_voiceSlider)
+        {
+            m_voiceSlider.value = SoundManager.Instance.GetVoiceVolume;
+            Debug.Log("ボイス音量：" + m_voiceSlider.value);
+        }
+
         StartActive();
     }
 
