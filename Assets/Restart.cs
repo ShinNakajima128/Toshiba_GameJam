@@ -10,6 +10,11 @@ public class Restart : MonoBehaviour
         StartCoroutine(OnRestart());
     }
 
+    public void GameStart()
+    {
+        LoadSceneManager.Instance.LoadGameScene();
+    }
+
     public void OnClickTitle()
     {
         LoadSceneManager.Instance.LoadTitleScene();
