@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ResultManager : MonoBehaviour
 {
     [SerializeField] Text m_calc = default;
+    [SerializeField] Text m_difficulty = default;
     [SerializeField] Text m_resultText = default;
     [SerializeField] GameObject m_selectPanel = default;
     [SerializeField] float m_timer = 1;
@@ -13,6 +14,7 @@ public class ResultManager : MonoBehaviour
     void Start()
     {
         m_calc.enabled = false;
+        m_difficulty.enabled = false;
         m_resultText.enabled = false;
         m_selectPanel.SetActive(false);
 
@@ -23,6 +25,8 @@ public class ResultManager : MonoBehaviour
     {
         yield return new WaitForSeconds(m_timer);
         m_calc.enabled = true;
+        yield return new WaitForSeconds(m_timer);
+        m_difficulty.enabled = true;
         yield return new WaitForSeconds(m_timer);
         m_resultText.enabled = true;
         yield return new WaitForSeconds(m_timer);
