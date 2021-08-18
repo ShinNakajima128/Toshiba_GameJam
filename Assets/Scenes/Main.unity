@@ -10904,22 +10904,22 @@ PrefabInstance:
     - target: {fileID: 8599503539118789710, guid: 258ddc0855ff34c4e8238c20837d0641,
         type: 3}
       propertyPath: m_normalToHard
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 8599503539118789710, guid: 258ddc0855ff34c4e8238c20837d0641,
         type: 3}
       propertyPath: m_hardToVeryhard
-      value: 500
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 8599503539118789710, guid: 258ddc0855ff34c4e8238c20837d0641,
         type: 3}
       propertyPath: m_veryhardToPairates
-      value: 750
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 8599503539118789710, guid: 258ddc0855ff34c4e8238c20837d0641,
         type: 3}
       propertyPath: m_easyToNormal
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8599503539118789711, guid: 258ddc0855ff34c4e8238c20837d0641,
         type: 3}

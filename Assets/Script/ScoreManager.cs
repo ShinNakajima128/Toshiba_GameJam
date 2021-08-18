@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] Text m_score;
     [SerializeField] Text m_difficulty;
     [SerializeField] Text m_resultScore;
+    [SerializeField] Animator m_anim = default;
     int m_scoreCopy;
     string m_difficultyCopy;
     float m_result;
@@ -28,6 +29,7 @@ public class ScoreManager : MonoBehaviour
         m_scoreCopy = GameManager.Instance.GetScore;
         m_result = Calculate(m_difficultyCopy);
         m_resultScore.text = m_result.ToString();
+        m_anim.enabled = false;
     }
 
     public float Calculate(string difficulty)
@@ -67,6 +69,8 @@ public class ScoreManager : MonoBehaviour
         {
             case "Easy":
                 text = "<color=#4FFFC5>EASY × 1</color>";
+                //text = "EASY × 1";
+                //m_anim.enabled = true;
                 break;
             case "Normal":
                 text = "<color=#EDFF7C>NORMAL × 1.25</color>";
@@ -79,6 +83,7 @@ public class ScoreManager : MonoBehaviour
                 break;
             case "Pirate":
                 text = "PIRATES × 2";
+                m_anim.enabled = true;
                 break;
             default:
                 break;

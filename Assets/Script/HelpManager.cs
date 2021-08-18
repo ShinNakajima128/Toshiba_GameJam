@@ -28,6 +28,8 @@ public class HelpManager : MonoBehaviour
 
     public void ChangeHelpState(int buttonType)
     {
+        SoundManager.Instance.PlaySeByName("5_1_select");
+
         if (buttonType == -1)
         {
             if (currentType > 0)
