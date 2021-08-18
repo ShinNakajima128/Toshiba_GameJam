@@ -15,6 +15,10 @@ public enum DifficultyState
 
 public class ProgressManager : MonoBehaviour
 {
+    [SerializeField] int m_easyToNormal = 50;
+    [SerializeField] int m_normalToHard = 100;
+    [SerializeField] int m_hardToVeryhard = 150;
+    [SerializeField] int m_veryhardToPairates = 200;
     [SerializeField] Text m_difficulty = default;
     [SerializeField] Slider m_progressGauge = default;
     [SerializeField] Animator m_textAnim = default;
@@ -41,23 +45,23 @@ public class ProgressManager : MonoBehaviour
             progressValue += Time.deltaTime * GameManager.Instance.DashSpeed;
             //m_progressGauge.value = progressValue;
 
-            if (progressValue >= 0 && progressValue < 30)
+            if (progressValue >= 0 && progressValue < m_easyToNormal)
             {
                 difficultyState = DifficultyState.Easy;
             }
-            else if (progressValue >= 30 && progressValue < 60)
+            else if (progressValue >= m_easyToNormal && progressValue < m_normalToHard)
             {
                 difficultyState = DifficultyState.Normal;          
             }
-            else if (progressValue >= 60 && progressValue < 90)
+            else if (progressValue >= m_normalToHard && progressValue < m_hardToVeryhard)
             {
                 difficultyState = DifficultyState.Hard;
             }
-            else if (progressValue >= 90 && progressValue < 120)
+            else if (progressValue >= m_hardToVeryhard && progressValue < m_veryhardToPairates)
             {
                 difficultyState = DifficultyState.VeryHard;
             }
-            else if (progressValue >= 120)
+            else if (progressValue >= m_veryhardToPairates)
             {
                 difficultyState = DifficultyState.Pirate;
                 m_textAnim.enabled = true;

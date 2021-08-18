@@ -10871,6 +10871,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProgressManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8599503539118789710, guid: 258ddc0855ff34c4e8238c20837d0641,
+        type: 3}
+      propertyPath: m_easyToNormal
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599503539118789710, guid: 258ddc0855ff34c4e8238c20837d0641,
+        type: 3}
+      propertyPath: m_normalToHard
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599503539118789710, guid: 258ddc0855ff34c4e8238c20837d0641,
+        type: 3}
+      propertyPath: m_hardToVeryhard
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599503539118789710, guid: 258ddc0855ff34c4e8238c20837d0641,
+        type: 3}
+      propertyPath: m_veryhardToPairates
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 8599503539118789711, guid: 258ddc0855ff34c4e8238c20837d0641,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16215,22 +16235,22 @@ PrefabInstance:
     - target: {fileID: 1275753938073908428, guid: 813b311b5c672b14e9b659a367a0432b,
         type: 3}
       propertyPath: m_spawnTime.Array.data[0]
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1275753938073908428, guid: 813b311b5c672b14e9b659a367a0432b,
         type: 3}
       propertyPath: m_spawnTime.Array.data[1]
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1275753938073908428, guid: 813b311b5c672b14e9b659a367a0432b,
         type: 3}
       propertyPath: m_spawnTime.Array.data[2]
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1275753938073908428, guid: 813b311b5c672b14e9b659a367a0432b,
         type: 3}
       propertyPath: m_spawnTime.Array.data[3]
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1275753938073908429, guid: 813b311b5c672b14e9b659a367a0432b,
         type: 3}

@@ -192,6 +192,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60eab0e94ec71c94189405263c35875f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_easyToNormal: 100
+  m_normalToHard: 200
+  m_hardToVeryhard: 400
+  m_veryhardToPairates: 600
   m_difficulty: {fileID: 8599503540476305274}
   m_progressGauge: {fileID: 8599503539255850647}
   m_textAnim: {fileID: 1641685318}
@@ -566,7 +570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 705, y: -416}
+  m_AnchoredPosition: {x: 705, y: 419}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8599503540476305273
@@ -598,7 +602,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: a7afb635fcf16e44d9f8fba6b855c425, type: 3}
-    m_FontSize: 50
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0

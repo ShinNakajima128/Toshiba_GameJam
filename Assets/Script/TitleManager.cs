@@ -66,6 +66,7 @@ public class TitleManager : MonoBehaviour
         }
 
         StartActive();
+        titleType = 0;
     }
 
     void Update()
@@ -73,12 +74,12 @@ public class TitleManager : MonoBehaviour
         if (m_titleState == TitleState.Start && Input.anyKeyDown)
         {
             MainActive();
-            titleType = 1;
         }
 
         if (m_titleState == TitleState.Main && Input.GetKeyDown(KeyCode.Escape))
         {
             StartActive();
+            titleType = 0;
         }
     }
 
@@ -101,33 +102,38 @@ public class TitleManager : MonoBehaviour
     /// </summary>
     public void MainActive()
     {
-        SoundManager.Instance.PlaySeByName("5_1_select");
+        Debug.Log(titleType);
+        if (titleType == 0) SoundManager.Instance.PlaySeByName("5_1_select");
+        if (titleType == 2) SoundManager.Instance.PlaySeByName("5_2_cancel");
         m_titleState = TitleState.Main;
         if (m_start.activeSelf) m_start.SetActive(false);
         if (m_audio.activeSelf) m_audio.SetActive(false);
         if (m_help.activeSelf) m_help.SetActive(false);
 
         m_main.SetActive(true);
+        titleType = 1;
     }
     /// <summary>
     /// オーディオ画面を表示する
     /// </summary>
     public void AudioActive()
     {
-        SoundManager.Instance.PlaySeByName("5_1_select");
+        if (titleType == 1) SoundManager.Instance.PlaySeByName("5_1_select");
         m_titleState = TitleState.Audio;
         if (m_main.activeSelf) m_main.SetActive(false);
         m_audio.SetActive(true);
+        titleType = 2;
     }
     /// <summary>
     /// ヘルプ画面を表示する
     /// </summary>
     public void HelpActive()
     {
-        SoundManager.Instance.PlaySeByName("5_1_select");
+        if (titleType == 1) SoundManager.Instance.PlaySeByName("5_1_select");
         m_titleState = TitleState.Help;
         if (m_main.activeSelf) m_main.SetActive(false);
         m_help.SetActive(true);
+        titleType = 2;
     }
 
     /// <summary>
