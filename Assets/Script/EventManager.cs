@@ -6,6 +6,8 @@ public class EventManager
     public static event Action<int> OnGetScore; 
     public static event Action<float, float> OnHPEvent;
     public static event Action<float, float> OnEPEvent;
+    public static event Action<float> OnDifChangeEvent;
+
     public static void GameStart()
     {
         OnGameStart?.Invoke();
@@ -26,6 +28,11 @@ public class EventManager
     public static void EPEvent(float currentValue, float maxValue)
     {
         OnEPEvent?.Invoke(currentValue, maxValue);
+    }
+
+    public static void DifChangeEvent(float value)
+    {
+        OnDifChangeEvent?.Invoke(value);
     }
 
 

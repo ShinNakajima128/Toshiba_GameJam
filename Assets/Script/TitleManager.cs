@@ -23,15 +23,27 @@ public class TitleManager : MonoBehaviour
     [SerializeField] GameObject m_help = default;
     [Header("ヘルプ画面時のゲーム説明用の画像")]
     [SerializeField] Image[] m_helpImages = default;
+    Slider m_masterSlider;
+    Slider m_bgmSlider;
+    Slider m_seSlider;
+    Slider m_voiceSlider;
     TitleState m_titleState = TitleState.Start;
+    int titleType = 0;
+
+    private void Awake()
+    {
+        AudioActive();
+    }
 
     void Start()
     {
+        
         SoundManager.Instance.PlayVoiceByName("title_fix");
-        m_start.SetActive(true);
-        m_main.SetActive(false);
-        m_audio.SetActive(false);
-        m_help.SetActive(false);
+        m_masterSlider = GameObject.FindGameObjectWithTag("MASTER").GetComponent<Slider>();
+        m_bgmSlider = GameObject.FindGameObjectWithTag("BGM").GetComponent<Slider>();
+        m_seSlider = GameObject.FindGameObjectWithTag("SE").GetComponent<Slider>();
+        m_voiceSlider = GameObject.FindGameObjectWithTag("VOICE").GetComponent<Slider>();
+        StartActive();
     }
 
     void Update()
@@ -39,6 +51,7 @@ public class TitleManager : MonoBehaviour
         if (m_titleState == TitleState.Start && Input.anyKeyDown)
         {
             MainActive();
+            titleType = 1;
         }
 
         if (m_titleState == TitleState.Main && Input.GetKeyDown(KeyCode.Escape))
@@ -49,10 +62,15 @@ public class TitleManager : MonoBehaviour
 
     public void StartActive()
     {
-        SoundManager.Instance.PlaySeByName("5_2_cancel");
+        if (titleType == 1)
+        {
+            SoundManager.Instance.PlaySeByName("5_2_cancel");
+            titleType = 0;
+        }
         m_titleState = TitleState.Start;
         if (m_main.activeSelf) m_main.SetActive(false);
-        
+        if (m_audio.activeSelf) m_audio.SetActive(false);
+
         m_start.SetActive(true);
     }
 
@@ -88,5 +106,34 @@ public class TitleManager : MonoBehaviour
         m_titleState = TitleState.Help;
         if (m_main.activeSelf) m_main.SetActive(false);
         m_help.SetActive(true);
+    }
+
+    /// <summary>
+    /// マスター音量を設定する
+    /// </summary>
+    public void SetMasterVolume()
+    {
+        SoundManager.Instance.MasterVolChange(m_masterSlider.value);
+    }
+    /// <summary>
+    /// BGM音量を設定する
+    /// </summary>
+    public void SetBgmVolume()
+    {
+        SoundManager.Instance.BgmVolChange(m_bgmSlider.value);
+    }
+    /// <summary>
+    /// SE音量を設定する
+    /// </summary>
+    public void SetSeVolume()
+    {
+        SoundManager.Instance.SeVolChange(m_seSlider.value);
+    }
+    /// <summary>
+    /// ボイス音量を設定する
+    /// </summary>
+    public void SetVoiceVolume()
+    {
+        SoundManager.Instance.VoiceVolChange(m_voiceSlider.value);
     }
 }

@@ -36,6 +36,15 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     Dictionary<string, int> voiceIndex = new Dictionary<string, int>();
     public static bool isLosted = false;
 
+    /// <summary> マスター音量時のフラグ </summary>
+    bool masterVolumeChange = false;
+    /// <summary> BGM音量時のフラグ </summary>
+    bool bgmVolumeChange = false;
+    /// <summary> SE音量時のフラグ </summary>
+    bool seVolumeChange = false;
+    /// <summary> ボイス音量時のフラグ </summary>
+    bool voiceVolumeChange = false;
+
 
     void Awake()
     {
@@ -249,24 +258,70 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         m_voiceAudioSource.clip = null;
     }
 
-    public void MasterVolChange()
+    /// <summary>
+    /// 各音量を変更する
+    /// </summary>
+    public void VolumeChanger()
     {
-        m_masterVolume = GameObject.FindGameObjectWithTag("Master").GetComponent<Slider>().value;
-        Debug.Log(m_masterVolume);
+        if (m_bgmAudioSource && bgmVolumeChange || m_bgmAudioSource && masterVolumeChange)
+        {
+            m_bgmAudioSource.volume = m_bgmVolume * m_masterVolume;
+            if (masterVolumeChange) masterVolumeChange = false;
+            if (bgmVolumeChange) bgmVolumeChange = false;
+        }
+
+        if (m_seAudioSource && seVolumeChange || m_seAudioSource && masterVolumeChange)
+        {
+            m_seAudioSource.volume = m_seVolume * m_masterVolume;
+            if (masterVolumeChange) masterVolumeChange = false;
+            if (seVolumeChange) seVolumeChange = false;
+        }
+
+        if (m_voiceAudioSource && voiceVolumeChange || m_voiceAudioSource && masterVolumeChange)
+        {
+            m_voiceAudioSource.volume = m_voiceVolume * m_masterVolume;
+            if (masterVolumeChange) masterVolumeChange = false;
+            if (voiceVolumeChange) voiceVolumeChange = false;
+        }
     }
-    public void BGMVolChange()
+
+    /// <summary>
+    /// マスター音量を変更する
+    /// </summary>
+    /// <param name="masterValue"> 音量 </param>
+    public void MasterVolChange(float masterValue)
     {
-        m_bgmVolume = GameObject.FindGameObjectWithTag("BGM").GetComponent<Slider>().value;
-        Debug.Log(m_bgmVolume);
+        m_masterVolume = masterValue;
+        masterVolumeChange = true;
     }
-    public void SEVolChange()
+
+    /// <summary>
+    /// BGM音量を変更する
+    /// </summary>
+    /// <param name="bgmValue"> 音量 </param>
+    public void BgmVolChange(float bgmValue)
     {
-        m_seVolume = GameObject.FindGameObjectWithTag("SE").GetComponent<Slider>().value;
-        Debug.Log(m_seVolume);
+        m_bgmVolume = bgmValue;
+        bgmVolumeChange = true;
     }
-    public void VoiceVolChange()
+
+    /// <summary>
+    /// SE音量を変更する
+    /// </summary>
+    /// <param name="seValue"> 音量 </param>
+    public void SeVolChange(float seValue)
     {
-        m_voiceVolume = GameObject.FindGameObjectWithTag("Voice").GetComponent<Slider>().value;
-        Debug.Log(m_voiceVolume);
+        m_seVolume = seValue;
+        seVolumeChange = true;
+    }
+
+    /// <summary>
+    /// ボイス音量を変更する
+    /// </summary>
+    /// <param name="voiceValue"> 音量 </param>
+    public void VoiceVolChange(float voiceValue)
+    {
+        m_voiceVolume = voiceValue;
+        voiceVolumeChange = true;
     }
 }

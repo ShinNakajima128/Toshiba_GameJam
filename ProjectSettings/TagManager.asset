@@ -9,6 +9,10 @@ TagManager:
   - Mouth
   - Laser
   - CameraArea
+  - MASTER
+  - BGM
+  - SE
+  - VOICE
   layers:
   - Default
   - TransparentFX
