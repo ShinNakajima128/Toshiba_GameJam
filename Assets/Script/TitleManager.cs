@@ -164,4 +164,9 @@ public class TitleManager : MonoBehaviour
     {
         SoundManager.Instance.VoiceVolChange(m_voiceSlider.value);
     }
+
+    public void QuitGameButton()
+    {
+        LoadSceneManager.Instance.QuitGame();
+    }
 }

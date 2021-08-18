@@ -121,7 +121,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         {
             switch (SceneManager.GetActiveScene().name)
             {
-                case "Title":
+                case "Nakajima":
                     PlayBgmByName("Title");
                     break;
                 case "AudioTestScene":
@@ -134,7 +134,8 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
                     PlayBgmByName("キュートなマジック！_2");
                     break;
                 case "Ryu":
-                    PlaySeByName("gameover");
+                    PlayBgmByName("心の中の小さな宇宙_2");
+                    //PlaySeByName("gameover");
                     break;
             }
         } 
