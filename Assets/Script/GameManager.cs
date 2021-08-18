@@ -158,7 +158,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
                 EventManager.EPEvent(m_currentLaserGauge, m_maxLaserGauge);
             }
 
-            if (m_currentStomachGauge <= 40 && !isStateChanged)
+            if (m_currentStomachGauge <= m_maxStomachGauge * 0.5 && !isStateChanged)
             {
                 isStateChanged = true;
                 AIwindowManager.Instance.ChangeAIByState(AIState.Diminish);
@@ -240,9 +240,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
         m_currentStomachGauge += value;
 
-        if (m_currentStomachGauge >= 100)
+        if (m_currentStomachGauge >= m_maxStomachGauge)
         {
-            m_currentStomachGauge = 100;
+            m_currentStomachGauge = m_maxStomachGauge;
         }
         EventManager.HPEvent(m_currentStomachGauge, m_maxStomachGauge);
     }
