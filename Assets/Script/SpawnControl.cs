@@ -24,6 +24,7 @@ public class SpawnControl : MonoBehaviour
         {
             m_allSpawnSpeed[i] = 1f;
         }
+        EventManager.OnDifChangeEvent += SpeedUp;
     }
 
     void Update()
@@ -31,7 +32,7 @@ public class SpawnControl : MonoBehaviour
         if (!m_spawn) return;
         for (int i = 0; i < m_timers.Length; i++)
         {
-            m_timers[i] += m_spawnSpeed[i] * m_allSpawnSpeed[i] * Time.deltaTime * GameManager.Instance.DashSpeed;
+            m_timers[i] += m_allSpawnSpeed[i] * Time.deltaTime * GameManager.Instance.DashSpeed;
             if (m_timers[i] >= m_spawnTime[i])
             {
                 m_spawnObjects[i].Spawn(m_spwanPos[m_count].position);
@@ -72,5 +73,12 @@ public class SpawnControl : MonoBehaviour
         m_spawn = true;
         m_count = 0;
         PositionShuffle();
+    }
+    void SpeedUp(float speed)
+    {
+        for (int i = 0; i < m_allSpawnSpeed.Length; i++)
+        {
+            m_allSpawnSpeed[i] += m_spawnSpeed[i] * speed;
+        }
     }
 }
