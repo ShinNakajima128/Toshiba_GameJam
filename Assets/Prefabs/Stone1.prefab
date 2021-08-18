@@ -5211,7 +5211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dir: {x: 0, y: 1, z: 0}
-  m_rotateSpeed: 20
+  m_rotateSpeed: 10
 --- !u!114 &4322827519397264728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5520,7 +5520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dir: {x: 0, y: 0, z: 1}
-  m_rotateSpeed: 20
+  m_rotateSpeed: 10
 --- !u!114 &5596235674157511925
 MonoBehaviour:
   m_ObjectHideFlags: 0
