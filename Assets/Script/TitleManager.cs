@@ -23,8 +23,7 @@ public class TitleManager : MonoBehaviour
     [SerializeField] GameObject m_audio = default;
     [Header("ヘルプ画面")]
     [SerializeField] GameObject m_help = default;
-    [Header("ヘルプ画面時のゲーム説明用の画像")]
-    [SerializeField] Image[] m_helpImages = default;
+    
     Slider m_masterSlider;
     Slider m_bgmSlider;
     Slider m_seSlider;
@@ -111,6 +110,7 @@ public class TitleManager : MonoBehaviour
         if (m_start.activeSelf) m_start.SetActive(false);
         if (m_audio.activeSelf) m_audio.SetActive(false);
         if (m_help.activeSelf) m_help.SetActive(false);
+        if (m_titleLogo) m_titleLogo.SetActive(true);
 
         m_main.SetActive(true);
         titleType = 1;
