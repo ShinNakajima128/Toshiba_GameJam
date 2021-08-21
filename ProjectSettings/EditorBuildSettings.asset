@@ -8,19 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nakajima.unity
     guid: 98be003f7db4601459d35b4c5d857111
-  - enabled: 0
-    path: Assets/Scenes/AudioTestScene.unity
-    guid: 42fe96b1a59dd424babc8a54df2aaa37
   - enabled: 1
-    path: Assets/Scenes/Takeuchi.unity
-    guid: 3de018fc98f823b4ba680b80eb3057b8
-  - enabled: 0
-    path: Assets/Scenes/DubugScene.unity
-    guid: cfeabc7af1acebd47b7639c043beca77
+    path: Assets/Scenes/Main.unity
+    guid: 08c7b6448118256479f9e8c150fe3f3b
   - enabled: 1
     path: Assets/Scenes/Ryu.unity
     guid: 0387fbfaa967ba84fbba2a3a836708c9
-  - enabled: 1
-    path: Assets/Scenes/UITest.unity
-    guid: 691bbe047628d6d47a7a55def6b5e479
   m_configObjects: {}

@@ -23,13 +23,14 @@ public class ScoreManager : MonoBehaviour
     }
     void Start()
     {
+        m_anim.enabled = false;
         m_score.text = GameManager.Instance.GetScore.ToString();
         m_difficultyCopy = ProgressManager.finalStatus.ToString();
         m_difficulty.text = DifColorChange(m_difficultyCopy);
         m_scoreCopy = GameManager.Instance.GetScore;
         m_result = Calculate(m_difficultyCopy);
         m_resultScore.text = m_result.ToString();
-        m_anim.enabled = false;
+        
     }
 
     public float Calculate(string difficulty)
@@ -81,7 +82,7 @@ public class ScoreManager : MonoBehaviour
             case "VeryHard":
                 text = "<color=#F15A44>VERYHARD × 1.75</color>";
                 break;
-            case "Pirate":
+            case "Pairates":
                 text = "PIRATES × 2";
                 m_anim.enabled = true;
                 break;

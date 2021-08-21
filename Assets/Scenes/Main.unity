@@ -11166,6 +11166,8 @@ MonoBehaviour:
   m_spawnObjects:
   - {fileID: 2313575061678941697, guid: 939cb7d2ef883ab4f866a64117d34c21, type: 3}
   - {fileID: 5228529850031116617, guid: 6f8c0f721a6547642ad6bb349ecdcaa2, type: 3}
+  - {fileID: 643565848565407324, guid: c68a534aa40790c45b4516a7e6b79023, type: 3}
+  - {fileID: 643565848565407324, guid: c68a534aa40790c45b4516a7e6b79023, type: 3}
 --- !u!4 &1854358260
 Transform:
   m_ObjectHideFlags: 0
@@ -16763,6 +16765,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8341706552477433676, guid: 3743ccc53f71ec44383c20f66b5ee08d,
+        type: 3}
+      propertyPath: m_shotInterval
+      value: 0.32
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3743ccc53f71ec44383c20f66b5ee08d, type: 3}
 --- !u!4 &3781478403165430545 stripped
@@ -16869,6 +16876,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LaserManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104174016525285436, guid: a2e1f1413c242994297428e35632a62a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6104174016525285438, guid: a2e1f1413c242994297428e35632a62a,
         type: 3}

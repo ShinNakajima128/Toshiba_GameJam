@@ -6199,24 +6199,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1291792290, guid: 41fbc59f9b87edb4581c79d558a15872, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b60702d37469f434ba4e00c6d0511be1,
-        type: 3}
-    - target: {fileID: 1890611290, guid: 41fbc59f9b87edb4581c79d558a15872, type: 3}
-      propertyPath: m_helpTexts.Array.data[1]
-      value: "\u5DE6\u30AF\u30EA\u30C3\u30AFor\u30B9\u30DA\u30FC\u30B9\u30AD\u30FC
-        : \u7832\u5F3E\u767A\u5C04\n\u9577\u62BC\u3057\u3059\u308B\u3068\u9023\u7D9A\u3067\u767A\u5C04\u3057\u307E\u3059\n\u7832\u5F3E\u3067\u9695\u77F3\u3092\u7834\u58CA\u3059\u308B\u3068\u5B9D\u77F3\u3084\u5B9D\u7BB1\u304C\u51FA\u73FE\u3057\u307E\u3059"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890611290, guid: 41fbc59f9b87edb4581c79d558a15872, type: 3}
-      propertyPath: m_helpTexts.Array.data[5]
-      value: "\u6642\u3005\u6D41\u661F\u7FA4\u304C\u3084\u3063\u3066\u304D\u307E\u3059\u304C\u3001AI\u304C\u5B89\u5168\u306A\n\u65B9\u5411\u3092\u6559\u3048\u3066\u304F\u308C\u308B\u306E\u3067\u5B89\u5168\u306A\u65B9\u3078\u79FB\u52D5\u3057\u3066\n\u56DE\u907F\u3057\u307E\u3057\u3087\u3046"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890611290, guid: 41fbc59f9b87edb4581c79d558a15872, type: 3}
-      propertyPath: m_helpTexts.Array.data[4]
-      value: "\u96E3\u6613\u5EA6:\u30B2\u30FC\u30E0\u306E\u9032\u884C\u5EA6\u306B\u3088\u3063\u3066\u5909\u5316\u3057\u307E\u3059\n\u96E3\u6613\u5EA6\u304C\u9AD8\u3044\u307B\u3069\u30B2\u30FC\u30E0\u7D42\u4E86\u6642\u306E\u30B9\u30B3\u30A2\u306B\n\u88DC\u6B63\u304C\u5165\u308A\u307E\u3059"
-      objectReference: {fileID: 0}
     - target: {fileID: 8855061065796337812, guid: 41fbc59f9b87edb4581c79d558a15872,
         type: 3}
       propertyPath: m_Name
