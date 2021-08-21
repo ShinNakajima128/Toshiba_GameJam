@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_moveSpeed: 10
   m_dir: {x: 0, y: 0, z: -1}
+  m_noDash: 0
 --- !u!114 &440091013607245077
 MonoBehaviour:
   m_ObjectHideFlags: 0
