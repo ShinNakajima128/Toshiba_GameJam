@@ -17,4 +17,9 @@ public class ShowcaseManager : MonoBehaviour
             m_panel.SetActive(true);
         }
     }
+
+    public void LoadTitle()
+    {
+        LoadSceneManager.Instance.LoadTitleScene();
+    }
 }

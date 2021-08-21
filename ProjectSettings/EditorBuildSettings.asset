@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ryu.unity
     guid: 0387fbfaa967ba84fbba2a3a836708c9
+  - enabled: 1
+    path: Assets/Scenes/ModelShowcase.unity
+    guid: 59ffbc45494e9ad41bdf551fbd280a78
   m_configObjects: {}

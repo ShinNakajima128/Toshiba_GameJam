@@ -28,7 +28,7 @@ public class ScoreManager : MonoBehaviour
         m_difficultyCopy = ProgressManager.finalStatus.ToString();
         m_difficulty.text = DifColorChange(m_difficultyCopy);
         m_scoreCopy = GameManager.Instance.GetScore;
-        m_result = Calculate(m_difficultyCopy);
+        m_result = (int)Calculate(m_difficultyCopy);
         m_resultScore.text = m_result.ToString();
         
     }

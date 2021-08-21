@@ -20,6 +20,11 @@ public class Restart : MonoBehaviour
         LoadSceneManager.Instance.LoadTitleScene();
     }
 
+    public void OnGallery()
+    {
+        LoadSceneManager.Instance.LoadGallery();
+    }
+
     IEnumerator OnRestart()
     {
         yield return new WaitForSeconds(1.5f);

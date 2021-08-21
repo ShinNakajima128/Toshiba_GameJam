@@ -12,6 +12,8 @@ public class LoadSceneManager : SingletonMonoBehaviour<LoadSceneManager>
     [SerializeField] string m_gameScene = "";
     /// <summary> リザルト </summary>
     [SerializeField] string m_resultScene = "";
+    /// <summary> ギャラリー </summary>
+    [SerializeField] string m_galleryScene = "";
     /// <summary> ロードする時間 </summary>
     [SerializeField] float m_LoadTimer = 1.0f;
     /// <summary> フェードさせるImage </summary>
@@ -126,6 +128,11 @@ public class LoadSceneManager : SingletonMonoBehaviour<LoadSceneManager>
         StartCoroutine(LoadScene(loadScene, m_LoadTimer));
     }
 
+    public void LoadGallery()
+    {
+        isFadeOut = true;
+        StartCoroutine(LoadScene(m_galleryScene, m_LoadTimer));
+    }
 
     public void Restart()
     {

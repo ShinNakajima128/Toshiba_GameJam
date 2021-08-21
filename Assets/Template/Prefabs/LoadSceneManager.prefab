@@ -119,11 +119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_titleScene: Title
-  m_easyScene: 
-  m_normalScene: 
-  m_hardScene: 
-  m_stageScenes: []
+  m_gameScene: 
   m_resultScene: 
+  m_galleryScene: 
   m_LoadTimer: 1
   fadeImage: {fileID: 7150421856246684231}
   fadeSpeedValue: 1
@@ -188,7 +186,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &7150421856575398379
 MonoBehaviour:
