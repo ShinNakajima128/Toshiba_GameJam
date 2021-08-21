@@ -4940,6 +4940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_moveSpeed: 20
   m_dir: {x: 0, y: 0, z: 1}
+  m_noDash: 1
 --- !u!114 &5928803350195315395
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class SelectDirMove : MoveControl
     Rigidbody m_rB;
     [SerializeField] float m_moveSpeed = 2f;
     [SerializeField] Vector3 m_dir = Vector3.back;
+    [SerializeField] bool m_noDash = false;
     bool m_moveF; 
     void Start()
     {
@@ -19,8 +20,15 @@ public class SelectDirMove : MoveControl
 
     void Update()
     {
-        if (!m_moveF) return;
-        m_rB.velocity = m_dir * m_moveSpeed * GameManager.Instance.DashSpeed;
+        if (!m_moveF && !m_noDash) return;
+        if (m_noDash)
+        {
+            m_rB.velocity = m_dir * m_moveSpeed * GameManager.Instance.GameSpeed;
+        }
+        else
+        {
+            m_rB.velocity = m_dir * m_moveSpeed * GameManager.Instance.DashSpeed;
+        }
     }
     public override void GameEnd()
     {

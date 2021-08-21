@@ -14,8 +14,8 @@ public class ScoreView : MonoBehaviour
     }
     void ViewScore(int score)
     {
-        float rX = Random.Range(-0.5f, 0.6f);
-        float rY = Random.Range(-0.5f, 0.6f);
-        EffectManager.Instance.ViewText(score, this.transform.position + new Vector3(rX,rY,0), Color.white);
+        float rX = Random.Range(-1f, 1.1f);
+        float rY = Random.Range(-1f, 1.1f);
+        EffectManager.Instance.ViewText(score, this.transform.position + new Vector3(rX, rY, 0), Color.white);
     }
 }
