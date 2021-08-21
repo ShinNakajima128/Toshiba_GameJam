@@ -23,7 +23,7 @@ public class LaserManager : MonoBehaviour
         {
             m_laserGaugeAnim.enabled = true;
 
-            if (Input.GetKeyDown(KeyCode.W) && !isShooted)
+            if (Input.GetKeyDown(KeyCode.Space) && !isShooted && GameManager.Instance.GetInGame)
             {
                 laser.ShotLaser(5.0f);
                 AIwindowManager.Instance.ChangeAIByState(AIState.Shoot);
