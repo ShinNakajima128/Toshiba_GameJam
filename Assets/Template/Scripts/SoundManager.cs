@@ -106,6 +106,10 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
             {
                 PlayBgmByName("心の中の小さな宇宙_2");
             }
+            else if (SceneManager.GetActiveScene().name == "ModelShowcase")
+            {
+                PlayBgmByName("心の中の小さな宇宙_2");
+            }
         }  
     }
 
@@ -134,7 +138,9 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
                     break;
                 case "Ryu":
                     PlayBgmByName("心の中の小さな宇宙_2");
-                    //PlaySeByName("gameover");
+                    break;
+                case "ModelShowcase":
+                    PlayBgmByName("心の中の小さな宇宙_2");
                     break;
             }
         } 

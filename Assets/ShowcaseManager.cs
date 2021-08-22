@@ -16,10 +16,14 @@ public class ShowcaseManager : MonoBehaviour
         {
             m_panel.SetActive(true);
         }
+
+        SoundManager.Instance.PlaySeByName("5_1_select");
     }
 
     public void LoadTitle()
     {
         LoadSceneManager.Instance.LoadTitleScene();
+
+        SoundManager.Instance.PlaySeByName("5_1_select");
     }
 }
