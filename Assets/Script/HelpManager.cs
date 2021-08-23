@@ -26,6 +26,16 @@ public class HelpManager : MonoBehaviour
         m_rightButton.SetActive(true);
     }
 
+    private void Update()
+    {
+        if (Input.GetButtonDown("Horizontal"))
+        {
+            float x = Input.GetAxisRaw("Horizontal");
+
+            ChangeHelpState((int)x);
+        }
+    }
+
     public void ChangeHelpState(int buttonType)
     {
         SoundManager.Instance.PlaySeByName("5_1_select");

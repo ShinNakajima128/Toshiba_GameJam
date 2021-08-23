@@ -18,7 +18,7 @@ public class ProgressManager : MonoBehaviour
     [SerializeField] int m_easyToNormal = 50;
     [SerializeField] int m_normalToHard = 100;
     [SerializeField] int m_hardToVeryhard = 150;
-    [SerializeField] int m_veryhardToPairates = 200;
+    [SerializeField] int m_veryhardToPirates = 200;
     [SerializeField] Text m_difficulty = default;
     [SerializeField] Slider m_progressGauge = default;
     [SerializeField] Animator m_textAnim = default;
@@ -59,11 +59,11 @@ public class ProgressManager : MonoBehaviour
             {
                 difficultyState = DifficultyState.Hard;
             }
-            else if (progressValue >= m_hardToVeryhard && progressValue < m_veryhardToPairates)
+            else if (progressValue >= m_hardToVeryhard && progressValue < m_veryhardToPirates)
             {
                 difficultyState = DifficultyState.VeryHard;
             }
-            else if (progressValue >= m_veryhardToPairates)
+            else if (progressValue >= m_veryhardToPirates)
             {
                 difficultyState = DifficultyState.Pirate;
                 m_textAnim.enabled = true;

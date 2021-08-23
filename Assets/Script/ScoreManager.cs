@@ -70,8 +70,6 @@ public class ScoreManager : MonoBehaviour
         {
             case "Easy":
                 text = "<color=#4FFFC5>EASY × 1</color>";
-                //text = "EASY × 1";
-                //m_anim.enabled = true;
                 break;
             case "Normal":
                 text = "<color=#EDFF7C>NORMAL × 1.25</color>";
@@ -82,7 +80,7 @@ public class ScoreManager : MonoBehaviour
             case "VeryHard":
                 text = "<color=#F15A44>VERYHARD × 1.75</color>";
                 break;
-            case "Pairates":
+            case "Pirate":
                 text = "PIRATES × 2";
                 m_anim.enabled = true;
                 break;

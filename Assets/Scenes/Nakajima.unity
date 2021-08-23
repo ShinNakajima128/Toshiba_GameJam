@@ -6244,6 +6244,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1890611290, guid: 41fbc59f9b87edb4581c79d558a15872, type: 3}
+      propertyPath: m_helpTexts.Array.data[1]
+      value: "Space or \u5DE6\u30AF\u30EA\u30C3\u30AF : \u7832\u5F3E\u767A\u5C04\n\u7832\u5F3E\u3067\u9695\u77F3\u3092\u7834\u58CA\u3059\u308B\u3068\u5B9D\u77F3\u3084\u5B9D\u7BB1\u304C\u51FA\u73FE\u3057\u307E\u3059\n\u9577\u62BC\u3057\u3067\u9023\u7D9A\u767A\u5C04\u3082\u53EF\u80FD"
+      objectReference: {fileID: 0}
     - target: {fileID: 1786342551892101808, guid: 41fbc59f9b87edb4581c79d558a15872,
         type: 3}
       propertyPath: m_LocalPosition.x

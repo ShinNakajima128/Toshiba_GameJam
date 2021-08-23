@@ -11035,6 +11035,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387177295011862819, guid: 995a90ab8ffae134aa9fd51a12c0fbbc,
+        type: 3}
+      propertyPath: m_ses.Array.data[19]
+      value: 
+      objectReference: {fileID: 8300000, guid: a5b7733e4b2d78f4b81b5d275c57ca8c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 995a90ab8ffae134aa9fd51a12c0fbbc, type: 3}
 --- !u!1 &1716835910 stripped
@@ -11512,6 +11522,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_easyToNormal
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599503539118789710, guid: 258ddc0855ff34c4e8238c20837d0641,
+        type: 3}
+      propertyPath: m_veryhardToPirates
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 8599503539118789711, guid: 258ddc0855ff34c4e8238c20837d0641,
         type: 3}
