@@ -24,7 +24,6 @@ public class ShotControl : MonoBehaviour
         {
             if (Input.GetButton("Fire1")||Input.GetButton("Jump") && !GameManager.Instance.GetIsGaugeMaxed)
             {
-                SoundManager.Instance.StopSe();
                 SoundManager.Instance.PlaySeByName("shot_fixed");
                 Instantiate(m_shotPrefab).transform.position = m_muzzle.position;
                 m_shotTimer = m_shotInterval;
