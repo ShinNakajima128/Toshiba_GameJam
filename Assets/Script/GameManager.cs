@@ -126,6 +126,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
                 SoundManager.Instance.StopVoice();
                 AIwindowManager.Instance.ChangeAIByState(AIState.Result);
                 break;
+            case "Nakajima":
+                SoundManager.Instance.StopSe();
+                break;
             default:
                 m_score = 0;
                 break;

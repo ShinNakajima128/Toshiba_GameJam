@@ -24,6 +24,60 @@ public class ShowcaseManager : MonoBehaviour
     {
         LoadSceneManager.Instance.LoadTitleScene();
 
-        SoundManager.Instance.PlaySeByName("5_1_select");
+        SoundManager.Instance.PlaySeByName("9_warp");
+    }
+
+    public void PlayVoice1()
+    {
+        SoundManager.Instance.StopVoice();
+        SoundManager.Instance.PlayVoiceByName("title_fix");
+    }
+
+    public void PlayVoice2()
+    {
+        SoundManager.Instance.StopVoice();
+        SoundManager.Instance.PlayVoiceByName("1-2");
+    }
+
+    public void PlayVoice3()
+    {
+        SoundManager.Instance.StopVoice();
+        SoundManager.Instance.PlayVoiceByName("2-2");
+    }
+
+    public void PlayVoice4()
+    {
+        SoundManager.Instance.StopVoice();
+        SoundManager.Instance.PlayVoiceByName("2-3");
+    }
+
+    public void PlayVoice5()
+    {
+        SoundManager.Instance.StopVoice();
+        SoundManager.Instance.PlayVoiceByName("3-2");
+    }
+
+    public void PlayVoice6()
+    {
+        SoundManager.Instance.StopVoice();
+        SoundManager.Instance.PlayVoiceByName("3-4");
+    }
+
+    public void PlayVoice7()
+    {
+        SoundManager.Instance.StopVoice();
+        SoundManager.Instance.PlayVoiceByName("3-1");
+    }
+
+    public void PlayVoice8()
+    {
+        SoundManager.Instance.StopVoice();
+        SoundManager.Instance.PlayVoiceByName("2-4");
+    }
+
+    public void PlayVoice9()
+    {
+        SoundManager.Instance.StopVoice();
+        SoundManager.Instance.PlayVoiceByName("result");
     }
 }

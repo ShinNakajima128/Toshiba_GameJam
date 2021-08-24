@@ -18,6 +18,7 @@ public class Restart : MonoBehaviour
     public void OnClickTitle()
     {
         LoadSceneManager.Instance.LoadTitleScene();
+        SoundManager.Instance.PlaySeByName("9_warp");
     }
 
     public void OnGallery()
