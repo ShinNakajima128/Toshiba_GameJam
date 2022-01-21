@@ -71,13 +71,13 @@ public class MeteorSwarmAlert : MonoBehaviour
         EffectManager.Instance.PlayShake(8f);
         yield return new WaitForSeconds(2.0f);
         if (m_playGame)
-            m_alert.text = "3";
+            m_alert.text = "";
         yield return new WaitForSeconds(1.0f);
         if (m_playGame)
-            m_alert.text = "2";
+            m_alert.text = "";
         yield return new WaitForSeconds(1.0f);
         if (m_playGame)
-            m_alert.text = "1";
+            m_alert.text = "";
         yield return new WaitForSeconds(1.0f);
         SoundManager.Instance.PlaySeByName("Meteor");
         if (m_playGame)
